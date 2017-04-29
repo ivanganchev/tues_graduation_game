@@ -1,0 +1,16 @@
+﻿  Turret.cpp
+  TextClass.cpp
+  MitovsHead.cpp
+  Generator.cpp
+c:\users\desktop\documents\github\tues_graduation_game\tues graduation game\tues graduation game\generator.cpp(25): warning C4018: '<=': signed/unsigned mismatch
+  GameObject.cpp
+c:\users\desktop\documents\github\tues_graduation_game\tues graduation game\tues graduation game\gameobject.cpp(87): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\desktop\documents\github\tues_graduation_game\tues graduation game\tues graduation game\gameobject.cpp(92): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+  EnemyAmmoGen.cpp
+  BasicEnemy.cpp
+c:\users\desktop\documents\github\tues_graduation_game\tues graduation game\tues graduation game\basicenemy.cpp(15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Background.cpp
+  Generating Code...
+  LINK : C:\Users\Desktop\Documents\GitHub\tues_graduation_game\Tues Graduation Game\Debug\Tues Graduation Game.exe not found or not built by the last incremental link; performing full link
+  Tues Graduation Game.vcxproj -> C:\Users\Desktop\Documents\GitHub\tues_graduation_game\Tues Graduation Game\Debug\Tues Graduation Game.exe
+  Tues Graduation Game.vcxproj -> C:\Users\Desktop\Documents\GitHub\tues_graduation_game\Tues Graduation Game\Debug\Tues Graduation Game.pdb (Partial PDB)

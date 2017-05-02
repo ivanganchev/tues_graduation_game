@@ -131,9 +131,6 @@
     <ClCompile Include="Months.cpp" />
     <ClCompile Include="Turret.cpp" />
     <ClCompile Include="TextClass.cpp" />
-    <ClCompile Include="StellasHead.cpp" />
-    <ClCompile Include="MitovsHead.cpp" />
-    <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Ammo.h" />
@@ -144,9 +141,7 @@
     <ClInclude Include="Headers\EnemyAmmo.h" />
     <ClInclude Include="Headers\TextClass.h" />
     <ClInclude Include="Headers\Background.h" />
-    <ClInclude Include="Headers\MitovsHead.h" />
     <ClInclude Include="Headers\GameObject.h" />
-    <ClInclude Include="Headers\StellasHead.h" />
     <ClInclude Include="Headers\Months.h" />
     <ClInclude Include="Headers\Turret.h" />
   </ItemGroup>

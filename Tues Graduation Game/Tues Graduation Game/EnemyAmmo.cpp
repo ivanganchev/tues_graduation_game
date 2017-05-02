@@ -7,6 +7,7 @@
 
 EnemyAmmo::EnemyAmmo(SDL_Surface * screenSurface, SDL_Window * window, vector <GameObject*> *gameObject) : GameObject("pictures/red laser.png", screenSurface, window)
 {
+	targets_ = { "Turret"};
 	gameObject_ = gameObject;
 	moveFlag_ = true;
 }
@@ -22,3 +23,7 @@ void EnemyAmmo::move()
 	}
 }
 
+string EnemyAmmo::get_name()
+{
+	return "EnemyAmmo";
+}

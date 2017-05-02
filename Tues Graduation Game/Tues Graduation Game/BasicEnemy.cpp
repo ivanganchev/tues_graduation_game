@@ -9,6 +9,7 @@
 
 BasicEnemy::BasicEnemy(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObjects) : GameObject("pictures/basicenemyplanev1.png", screenSurface, window)
 {
+	
 	ammoGen_ = new EnemyAmmoGen(screenSurface, window, gameObjects);
 	gameObjects_ = gameObjects;
 	moveFlag_ = true;
@@ -52,4 +53,11 @@ void BasicEnemy::move()
 		}
 
 
+}
+
+
+
+string BasicEnemy::get_name()
+{
+	return "BasicEnemy";
 }

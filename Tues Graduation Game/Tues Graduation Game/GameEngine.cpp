@@ -36,7 +36,9 @@ int main()
 	bool quit = false;
 	SDL_Event e;
 	vector <GameObject*> gameObjects;
-	const int  FRAMES_PER_SECOND = 50;
+	const int FRAMES_PER_SECOND = 50;
+
+
 
 	window = SDL_CreateWindow("TUES Graduation Game", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);	
 	//window = SDL_SetVideoMode(640, 480, 32, SDL_SWSURFACE);
@@ -54,6 +56,7 @@ int main()
 	Turret spaceship(screenSurface, window, &gameObjects);
 	spaceship.set_x(540);
 	spaceship.set_y(560);
+
 
 	BasicEnemyGen enemySpaceshipGen(screenSurface, window, &gameObjects);
 
@@ -84,6 +87,12 @@ int main()
 				delArray.push_back(i);
 			}
 			gameObjects[i]->show();
+
+			if (gameObjects[i]->get_name() != "")
+			{
+				cout << gameObjects[i]->get_name() << endl;
+			}
+			
 
 		}
 

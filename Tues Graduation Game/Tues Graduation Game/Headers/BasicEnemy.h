@@ -11,11 +11,12 @@ class BasicEnemy : public GameObject
 	int speedX;
 	int speedY;
 	vector <GameObject*> *gameObjects_;
-	EnemyAmmoGen *ammoGen_ ;
-	
+	EnemyAmmoGen *ammoGen_;
+
 
 public:
 	BasicEnemy(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObject);
 	void move();
+	string get_name();
 
 };

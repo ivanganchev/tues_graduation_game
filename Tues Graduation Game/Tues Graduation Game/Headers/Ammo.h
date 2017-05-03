@@ -9,11 +9,8 @@
 class Ammo : public GameObject
 {
 
-protected:
-	vector <GameObject*> gameObjects_;
 public:
-	Ammo(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> gameObject);
+	Ammo(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObject);
 	void move();
-	string get_name();
 
 };

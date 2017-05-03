@@ -1,7 +1,7 @@
 #include <SDL.h>
 #include <string>
 #include <iostream>
-#include "GameObject.h"
+#include "Headers/GameObject.h"
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 
@@ -41,8 +41,8 @@ using namespace std;
 
 	void GameObject::init(SDL_Surface* screenSurface, SDL_Window* window)
 	{
-		
 		isVisible_ = true;
+		isHit_ = false;
 		witdhWindow_ = 0;
 		heightWindow_ = 0;
 		x_ = 0;
@@ -81,9 +81,11 @@ using namespace std;
 
 	 void GameObject::move()
 	 {
-
-
 	 }
+
+	// bool GameObject::isHit()
+	 //{
+	 //}
 
 	 bool GameObject::isMovable()
 	 {
@@ -95,18 +97,7 @@ using namespace std;
 		 return isVisible_;
 	 }
 
-	
-	 string GameObject::get_name()
-	 {
-		 return "";
-	 }
-
-	 SDL_Surface* GameObject::get_image()
-	 {
-		 return image_;
-	 }
-
-	 void GameObject::setVisibility(bool visibility)
-	 {
-		 isVisible_ = visibility;
-	 }
+	// int GameObject::checkHits()
+	//{
+		// return isHit_;
+	//}

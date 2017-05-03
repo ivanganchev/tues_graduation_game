@@ -1,21 +1,21 @@
 #include <SDL.h>
 #include <string>
 #include <iostream>
-#include "GameObject.h"
+#include "Headers/GameObject.h"
 #include <SDL_image.h>
 #include <vector>
-#include "Background.h"
-#include "MitovsHead.h"
-#include "StellasHead.h"
-#include "TextClass.h"
-#include "Months.h"
-#include "Turret.h"
+#include "Headers/Background.h"
+#include "Headers/TextClass.h"
+#include "Headers/Months.h"
+#include "Headers/Turret.h"
 #include "Headers/BasicEnemy.h"
-#include "Generator.h"
-#include "BasicEnemyGen.h"
-#include "BasicEnemy.h"
-#include "EnemyAmmo.h"
-#include "EnemyAmmoGen.h"
+#include "Headers/Generator.h"
+#include "Headers/BasicEnemyGen.h"
+#include "Headers/BasicEnemy.h"
+#include "Headers/EnemyAmmo.h"
+#include "Headers/EnemyAmmoGen.h"
+#include "Headers/TougherEnemy.h"
+#include "Headers/TougherEnemyGen.h"
 #include <cstdio>
 #include <ctime>
 #include <SDL_ttf.h>
@@ -36,9 +36,7 @@ int main()
 	bool quit = false;
 	SDL_Event e;
 	vector <GameObject*> gameObjects;
-	const int FRAMES_PER_SECOND = 50;
-
-
+	const int  FRAMES_PER_SECOND = 50;
 
 	window = SDL_CreateWindow("TUES Graduation Game", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);	
 	//window = SDL_SetVideoMode(640, 480, 32, SDL_SWSURFACE);
@@ -57,9 +55,8 @@ int main()
 	spaceship.set_x(540);
 	spaceship.set_y(560);
 
-
 	BasicEnemyGen enemySpaceshipGen(screenSurface, window, &gameObjects);
-
+	TougherEnemyGen tougherSpaceshipGen(screenSurface, window, &gameObjects);
 
 	gameObjects.push_back(&background1);
 	gameObjects.push_back(&background2);
@@ -72,27 +69,32 @@ int main()
 	while (!quit)
 	{
 		enemySpaceshipGen.add(2, 5);
+		tougherSpaceshipGen.add(5, 10);
+
 		vector<int> delArray;
 
 		for (int i = 0; i < gameObjects.size(); i++)
 		{
+			/*
+			if (gameObjects[i]->checkHits() == 2)
+			{
+				quit = true;
+				break;
+			} else if (gameObjects[i]->checkHits() == 1)
+			{
+				gameObjects.erase(gameObjects.begin() + i);
+			} */
+
 			if (gameObjects[i]->isMovable() == true)
 			{
  				gameObjects[i]->move();
 			}
-
 
 			if(!gameObjects[i]->isVisible())
 			{
 				delArray.push_back(i);
 			}
 			gameObjects[i]->show();
-
-			if (gameObjects[i]->get_name() != "")
-			{
-				cout << gameObjects[i]->get_name() << endl;
-			}
-			
 
 		}
 

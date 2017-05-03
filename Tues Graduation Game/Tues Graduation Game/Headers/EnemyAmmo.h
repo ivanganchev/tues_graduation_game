@@ -13,6 +13,5 @@ class EnemyAmmo : public GameObject
 public:
 	EnemyAmmo(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObject);
 	void move();
-	string get_name();
-	
+
 }; 

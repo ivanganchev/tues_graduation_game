@@ -1,8 +1,8 @@
 #include <SDL_ttf.h>
 #include <SDL.h>
 #include <iostream>
-#include "GameObject.h"
-#include "Headers\TextClass.h"
+#include "Headers/GameObject.h"
+#include "Headers/TextClass.h"
 #include <string>
 
 TextClass::TextClass(SDL_Surface* screenSurface, SDL_Window* window) : GameObject(screenSurface, window)

@@ -21,6 +21,15 @@
     <ClCompile Include="GameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MitovsHead.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StellasHead.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Background.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -51,12 +60,24 @@
     <ClCompile Include="EnemyAmmoGen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TougherEnemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TougherEnemyGen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\GameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Headers\MitovsHead.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Headers\Background.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\StellasHead.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Headers\TextClass.h">
@@ -86,6 +107,12 @@
     <ClInclude Include="Headers\EnemyAmmoGen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Headers\TougherEnemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\TougherEnemyGen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="pictures\kungfu.bmp">
@@ -95,6 +122,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="pictures\shmuk.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\Downloads\sbl4boss.jpg">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

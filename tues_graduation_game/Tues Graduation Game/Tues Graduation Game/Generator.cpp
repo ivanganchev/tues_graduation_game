@@ -1,7 +1,7 @@
-#include "Headers/Generator.h"
+#include "Generator.h"
 #include <SDL.h>
 #include <vector>
-#include "Headers/GameObject.h"
+#include "GameObject.h"
 #include <time.h>
 
 Generator::Generator(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObjects)

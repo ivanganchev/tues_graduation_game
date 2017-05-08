@@ -1,6 +1,6 @@
 #include <SDL.h>
-#include "Headers/MitovsHead.h"
-#include "Headers/GameObject.h"
+#include "MitovsHead.h"
+#include "GameObject.h"
 
 
 MitovsHead::MitovsHead(SDL_Surface* screenSurface, SDL_Window* window) : GameObject("pictures/mitov2.png", screenSurface, window)

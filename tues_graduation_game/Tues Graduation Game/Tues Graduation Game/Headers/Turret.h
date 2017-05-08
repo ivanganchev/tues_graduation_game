@@ -10,6 +10,12 @@ class Turret : public GameObject
 	
 	vector <GameObject*> *gameObjects_;
 	Ammo *ammo_ = NULL;
+
+	void moveLeft();
+	void moveRight();
+	void fire();
+	int direction_ = 0;
+
 protected:
 	SDL_Event keyEvent;
 	

@@ -1,7 +1,7 @@
 #pragma once
 #include <SDL.h>
-#include "Headers/StellasHead.h"
-#include "Headers/GameObject.h"
+#include "StellasHead.h"
+#include "GameObject.h"
 
 StellasHead::StellasHead(SDL_Surface* screenSurface, SDL_Window* window) : GameObject("pictures/stelcheto.png", screenSurface, window)
 {

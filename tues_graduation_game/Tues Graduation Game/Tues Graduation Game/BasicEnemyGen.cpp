@@ -1,7 +1,7 @@
 #include <SDL.h>
 #include <vector>
-#include "Headers/BasicEnemy.h"
-#include "Headers/BasicEnemyGen.h"
+#include "BasicEnemy.h"
+#include "BasicEnemyGen.h"
 
 
 

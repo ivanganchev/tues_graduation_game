@@ -1,14 +1,15 @@
 #include <SDL.h>
-#include "Headers/GameObject.h"
-#include "Headers/BasicEnemy.h"
+#include "GameObject.h"
+#include "Headers\BasicEnemy.h"
 #include <vector>
 #include <stdlib.h>
-#include <time.h>
-#include "Headers/EnemyAmmo.h"
-#include "Headers/EnemyAmmoGen.h"
+#include<time.h>
+#include "EnemyAmmo.h"
+#include "EnemyAmmoGen.h"
 
 BasicEnemy::BasicEnemy(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObjects) : GameObject("pictures/basicenemyplanev1.png", screenSurface, window)
 {
+	
 	ammoGen_ = new EnemyAmmoGen(screenSurface, window, gameObjects);
 	gameObjects_ = gameObjects;
 	moveFlag_ = true;
@@ -20,16 +21,8 @@ BasicEnemy::BasicEnemy(SDL_Surface* screenSurface, SDL_Window* window, vector <G
 	{
 		speedX = -speedX;
 	}
+
 }
-
-/*
-bool BasicEnemy::isHit(int xCord, int yCord) 
-{
-
-	if(xCord >= gameObjects_[i] && xCord <= (x_ - 11))
-
-	return 1;
-}*/
 
 void BasicEnemy::move()
 {
@@ -54,7 +47,6 @@ void BasicEnemy::move()
 			ammoGen_->get_object()->set_x(x_ + 65);
 			ammoGen_->get_object()->set_y(y_ + 109);	
 		}
-
 		SDL_GetWindowSize(window_, &w, &h);
 		if (x_ > w || x_ < -120)
 		{
@@ -62,4 +54,11 @@ void BasicEnemy::move()
 		}
 
 
+}
+
+
+
+string BasicEnemy::get_name()
+{
+	return "BasicEnemy";
 }

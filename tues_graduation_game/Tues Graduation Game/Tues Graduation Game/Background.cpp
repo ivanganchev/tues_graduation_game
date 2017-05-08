@@ -1,6 +1,6 @@
 #include <SDL.h>
-#include "Headers/GameObject.h"
-#include "Headers/Background.h"
+#include "GameObject.h"
+#include "Background.h"
 
 Background::Background(SDL_Surface* screenSurface, SDL_Window* window) : GameObject("pictures/Background.jpg", screenSurface, window)
 {

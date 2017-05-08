@@ -3,6 +3,9 @@
 #include <vector>
 #include "Generator.h"
 
+
+
+
 class BasicEnemyGen : public Generator
 {
 	vector <GameObject*> *gameObject_;

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <SDL_image.h>
 #include <SDL_ttf.h>
+#include <vector>
 
 using namespace std;
 
@@ -22,8 +23,11 @@ protected:
 	int imgFlags_;
 	int moveFlag_;
 	int isVisible_;
-	int isHit_;
-	
+	vector<string> targets_;
+
+
+
+
 public:
 	GameObject();
 	GameObject(const char* image_path, SDL_Surface* screenSurface, SDL_Window* window);
@@ -34,11 +38,11 @@ public:
 	virtual ~GameObject()
 	{}
 	virtual void move();
-	//virtual bool isHit();
 	void set_y(int y);
 	void set_x(int x);
 	bool isMovable();
 	bool isVisible();
-	//int checkHits();
-	
+	virtual string get_name();
+	SDL_Surface * get_image();
+	void setVisibility(bool visibility);
 };

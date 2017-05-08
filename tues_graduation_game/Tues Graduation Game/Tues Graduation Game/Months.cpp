@@ -1,8 +1,8 @@
 #include <SDL_ttf.h>
 #include <SDL.h>
-#include "Headers/Months.h"
-#include "Headers/TextClass.h"
-#include "Headers/GameObject.h"
+#include "Months.h"
+#include "TextClass.h"
+#include "GameObject.h"
 
 using namespace std;
 
@@ -16,7 +16,7 @@ Months::Months(SDL_Surface *screenSurface, SDL_Window *window) : TextClass(scree
 
 void Months::show()
 {
-	unsigned int seconds;
+	unsigned int seconds, current_time;
 
 	if (SDL_GetTicks() % 100 == 0) month_select++;
 	if (month_select > 11) month_select = 0;
@@ -25,4 +25,7 @@ void Months::show()
 	TextClass::show();
 	seconds = 0;
 		
+	
+		
+
 }

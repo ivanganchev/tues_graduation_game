@@ -2,21 +2,21 @@
 #include <SDL.h>
 #include "GameObject.h"
 #include <vector>
-#include "Generator.h"
+#include <Generator.h>
 #include "EnemyAmmo.h"
 #include "EnemyAmmoGen.h"
-
 class BasicEnemy : public GameObject
 {
 	int limit;
 	int speedX;
 	int speedY;
 	vector <GameObject*> *gameObjects_;
-	EnemyAmmoGen *ammoGen_ ;
-	
+	EnemyAmmoGen *ammoGen_;
+
 
 public:
 	BasicEnemy(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObject);
 	void move();
-	//static bool isHit(int xCord, int yCord);
+	string get_name();
+
 };

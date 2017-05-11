@@ -1,11 +1,11 @@
 #include <SDL.h>
 #include <SDL_image.h>
-#include "GameObject.h"
+#include "Headers/GameObject.h"
 #include <iostream>
-#include "Turret.h"
+#include "Headers/Turret.h"
 #include <vector>
-#include "Ammo.h"
-
+#include "Headers/Turret.h"
+#include "Headers/GameEndingScreen.h"
 
 
 void Turret::moveLeft()
@@ -42,8 +42,10 @@ void Turret::fire()
 
 Turret::Turret(SDL_Surface * screenSurface, SDL_Window * window, vector <GameObject*> *gameObject) : GameObject("pictures/samolet.png", screenSurface, window)
 {
+	targets_ = {"EnemyAmmo"};
 	gameObjects_ = gameObject;
 	moveFlag_ = true;
+	endFlag_ = 0;
 }
 
 
@@ -57,7 +59,7 @@ void Turret::move()
 		
 		if (keyEvent.type == SDL_KEYDOWN)
 		{
-			if (state[SDL_SCANCODE_SPACE]) 
+			if(state[SDL_SCANCODE_SPACE]) 
 			{
 				fire();
 			}
@@ -67,11 +69,18 @@ void Turret::move()
 				direction_ = -1;
 			}
 
-			if (state[SDL_SCANCODE_D])
+			if(state[SDL_SCANCODE_D])
 			{
 				direction_ = 1;
 			}
 		}
+		/*if (keyEvent.type == SDL_KEYUP)
+		{
+			if (!(state[SDL_SCANCODE_D]))
+			{
+				direction_ = 0;
+			}
+		}*/
 	}
 
 	if (direction_ == -1)
@@ -84,4 +93,36 @@ void Turret::move()
 		moveRight();
 	}
 	
+
+	for (int i = 0; i < gameObjects_->size(); i++)
+	{
+		GameObject *obj = (*gameObjects_)[i];
+		if (get_name() == obj->get_name()) {
+			continue;
+		}
+
+  		if (find(targets_.begin(), targets_.end(), obj->get_name()) != targets_.end())
+		{
+			if (obj->get_x() <= (x_ + image_->w / 2) && (obj->get_x() + obj->get_image()->w) >= (x_ + image_->w / 2) && (y_ - image_->h) <= (obj->get_y() - obj->get_image()->h))
+			{
+				(*gameObjects_)[i]->setVisibility(false);
+				setVisibility(false);
+				endFlag_ = 1;
+				break;
+			}
+		}
+	}
+
+	if (endFlag_ == 1)
+	{
+		end_ = new GameEndingScreen(screenSurface_, window_, gameObjects_);
+		//(*gameObjects_).clear();
+		(*gameObjects_).push_back(end_);
+		//(*gameObjects_)[gameObjects_->size()]->show();
+		
+		
+	}
+
 }
+
+

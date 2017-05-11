@@ -1,4 +1,2 @@
-﻿  BasicEnemy.cpp
-c:\users\vanku\documents\github\tues_graduation_game\tues graduation game\tues graduation game\basicenemy.cpp(16): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Tues Graduation Game.vcxproj -> C:\Users\vanku\Documents\GitHub\tues_graduation_game\Tues Graduation Game\Debug\Tues Graduation Game.exe
-  Tues Graduation Game.vcxproj -> C:\Users\vanku\Documents\GitHub\tues_graduation_game\Tues Graduation Game\Debug\Tues Graduation Game.pdb (Partial PDB)
+﻿  Tues Graduation Game.vcxproj -> E:\Tues Graduation Game\tues_graduation_game\tues_graduation_game\Tues Graduation Game\Debug\Tues Graduation Game.exe
+  Tues Graduation Game.vcxproj -> E:\Tues Graduation Game\tues_graduation_game\tues_graduation_game\Tues Graduation Game\Debug\Tues Graduation Game.pdb (Partial PDB)

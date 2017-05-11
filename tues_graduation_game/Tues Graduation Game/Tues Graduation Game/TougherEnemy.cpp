@@ -7,7 +7,7 @@
 #include "Headers/EnemyAmmo.h"
 #include "Headers/EnemyAmmoGen.h"
 
-TougherEnemy::TougherEnemy(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObjects) : GameObject("pictures/tougherEnemy.png", screenSurface, window)
+TougherEnemy::TougherEnemy(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObjects) : GameObject("pictures/valkuplane.png", screenSurface, window)
 {
 	ammoGen_ = new EnemyAmmoGen(screenSurface, window, gameObjects);
 	gameObjects_ = gameObjects;

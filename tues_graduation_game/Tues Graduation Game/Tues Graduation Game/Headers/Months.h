@@ -10,7 +10,7 @@
 class Months : public TextClass
 {
 	vector<string> months_;
-
+	int lastTime_;
 public:
 
 	Months(SDL_Surface *screenSurface, SDL_Window *window);

@@ -5,11 +5,16 @@
 #include <iostream>
 #include <vector>
 #include "Ammo.h"
+#include "GameEndingScreen.h"
+
 class Turret : public GameObject
 {
 	
 	vector <GameObject*> *gameObjects_;
 	Ammo *ammo_ = NULL;
+	GameEndingScreen *end_ = NULL;
+	
+	int endFlag_;
 
 	void moveLeft();
 	void moveRight();

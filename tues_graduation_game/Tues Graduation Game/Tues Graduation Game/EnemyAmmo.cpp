@@ -1,7 +1,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
-#include "EnemyAmmo.h"
-#include "GameObject.h"
+#include "Headers/EnemyAmmo.h"
+#include "Headers/GameObject.h"
 #include <vector>
 
 

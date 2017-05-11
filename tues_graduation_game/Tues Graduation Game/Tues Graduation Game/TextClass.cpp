@@ -1,7 +1,7 @@
 #include <SDL_ttf.h>
 #include <SDL.h>
 #include <iostream>
-#include "GameObject.h"
+#include "Headers/GameObject.h"
 #include "Headers\TextClass.h"
 #include <string>
 

@@ -1,21 +1,21 @@
 #include <SDL.h>
 #include <string>
 #include <iostream>
-#include "GameObject.h"
+#include "Headers/GameObject.h"
 #include <SDL_image.h>
 #include <vector>
-#include "Background.h"
-#include "MitovsHead.h"
-#include "StellasHead.h"
-#include "TextClass.h"
-#include "Months.h"
-#include "Turret.h"
+#include "Headers/Background.h"
+#include "Headers/MitovsHead.h"
+#include "Headers/StellasHead.h"
+#include "Headers/TextClass.h"
+#include "Headers/Months.h"
+#include "Headers/Turret.h"
 #include "Headers/BasicEnemy.h"
-#include "Generator.h"
-#include "BasicEnemyGen.h"
-#include "BasicEnemy.h"
-#include "EnemyAmmo.h"
-#include "EnemyAmmoGen.h"
+#include "Headers/Generator.h"
+#include "Headers/BasicEnemyGen.h"
+#include "Headers/BasicEnemy.h"
+#include "Headers/EnemyAmmo.h"
+#include "Headers/EnemyAmmoGen.h"
 #include <cstdio>
 #include <ctime>
 #include <SDL_ttf.h>
@@ -92,8 +92,6 @@ int main()
 			{
 				cout << gameObjects[i]->get_name() << endl;
 			}
-			
-
 		}
 
 		for (int i = 0; i < delArray.size(); i++)

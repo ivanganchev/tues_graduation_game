@@ -1,11 +1,12 @@
 #include <SDL.h>
-#include "GameObject.h"
-#include "Headers\BasicEnemy.h"
+#include "Headers/GameObject.h"
+#include "Headers/BasicEnemy.h"
 #include <vector>
 #include <stdlib.h>
-#include<time.h>
-#include "EnemyAmmo.h"
-#include "EnemyAmmoGen.h"
+#include <time.h>
+#include "Headers/EnemyAmmo.h"
+#include "Headers/Generator.h"
+#include "Headers/EnemyAmmoGen.h"
 
 BasicEnemy::BasicEnemy(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObjects) : GameObject("pictures/basicenemyplanev1.png", screenSurface, window)
 {
@@ -24,35 +25,39 @@ BasicEnemy::BasicEnemy(SDL_Surface* screenSurface, SDL_Window* window, vector <G
 
 }
 
+void BasicEnemy::fire()
+{
+	int h, w;
+	GameObject *tempPointer = ammoGen_->get_object();
+		
+			ammoGen_->add(1, 3);
+			if (tempPointer != ammoGen_->get_object()) {
+				ammoGen_->get_object()->set_x(x_ + 65);
+				ammoGen_->get_object()->set_y(y_ + 109);	
+			}
+			SDL_GetWindowSize(window_, &w, &h);
+			if (x_ > w || x_ < -120)
+			{
+				isVisible_ = false;
+			}
+}
+
+
 void BasicEnemy::move()
 {
 
-		int h, w;
+		
 		
 		if(y_ < limit)
 		{
-			y_ += speedY;
-			
-			
+			y_ += speedY;	
 		}
 		else
 		{
 			x_ += speedX;
-
-		}
-		GameObject *tempPointer = ammoGen_->get_object();
-		
-		ammoGen_->add(1, 3);
-		if (tempPointer != ammoGen_->get_object()) {
-			ammoGen_->get_object()->set_x(x_ + 65);
-			ammoGen_->get_object()->set_y(y_ + 109);	
-		}
-		SDL_GetWindowSize(window_, &w, &h);
-		if (x_ > w || x_ < -120)
-		{
-			isVisible_ = false;
 		}
 
+		fire();
 
 }
 

@@ -1,8 +1,8 @@
 #include <SDL.h>
 #include <vector>
-#include "EnemyAmmo.h"
-#include "EnemyAmmoGen.h"
-#include "Generator.h"
+#include "Headers/EnemyAmmo.h"
+#include "Headers/EnemyAmmoGen.h"
+#include "Headers/Generator.h"
 
 
 

@@ -1,9 +1,7 @@
+#pragma once
 #include <SDL.h>
 #include <SDL_image.h>
 #include "GameObject.h"
-#pragma once
-
-
 
 class GameEndingScreen : public GameObject
 {

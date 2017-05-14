@@ -25,9 +25,9 @@ TougherEnemy::TougherEnemy(SDL_Surface* screenSurface, SDL_Window* window, vecto
 bool BasicEnemy::isHit(int xCord, int yCord)
 {
 
-	if (xCord >= gameObjects_[i] && xCord <= (x_ - 11))
+if (xCord >= gameObjects_[i] && xCord <= (x_ - 11))
 
-		return 1;
+return 1;
 }*/
 
 void TougherEnemy::move()

@@ -77,11 +77,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>E:\SDL2\include;Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\SDL2\include;C:\SDL2\SDL_Image\include;C:\SDL2\SDL_TTF\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>E:\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>E:\ttf\SDL2_ttf-2.0.14\lib\x86\SDL2_ttf.lib;SDL2_image.lib;SDL2main.lib;SDL2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\SDL2\lib\x86;C:\SDL2\SDL_Image\lib\x86;C:\SDL2\SDL_TTF\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2main.lib;SDL2.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -90,12 +90,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>E:\ttf\SDL2_ttf-2.0.14\include;E:\SDL2\sdl_image\include;E:\SDL-devel\SDL2-2.0.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <AdditionalLibraryDirectories>E:\ttf\SDL2_ttf-2.0.14\lib\x86;E:\SDL2\sdl_image\lib\x86;E:\SDL-devel\SDL2-2.0.5\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2main.lib;SDL2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -104,10 +99,13 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\SDL2\include;C:\SDL2\SDL_Image\include;C:\SDL2\SDL_TTF\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\SDL2\lib\x86;C:\SDL2\SDL_Image\lib\x86;C:\SDL2\SDL_TTF\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2main.lib;SDL2.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -133,12 +131,33 @@
     <ClCompile Include="Generator.cpp" />
     <ClCompile Include="BasicEnemyGen.cpp" />
     <ClCompile Include="EnemyAmmo.cpp" />
-    <ClCompile Include="Months.cpp" />
     <ClCompile Include="GameEndingScreen.cpp" />
-    <ClCompile Include="TougherEnemy.cpp" />
     <ClCompile Include="TougherEnemyGen.cpp" />
+    <ClCompile Include="TougherEnemy.cpp" />
+    <ClCompile Include="Months.cpp" />
     <ClCompile Include="Turret.cpp" />
     <ClCompile Include="TextClass.cpp" />
+    <ClCompile Include="StellasHead.cpp" />
+    <ClCompile Include="MitovsHead.cpp" />
+    <ClCompile Include="Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Headers\Ammo.h" />
+    <ClInclude Include="Headers\BasicEnemy.h" />
+    <ClInclude Include="Headers\EnemyAmmoGen.h" />
+    <ClInclude Include="Headers\GameEndingScreen.h" />
+    <ClInclude Include="Headers\Generator.h" />
+    <ClInclude Include="Headers\BasicEnemyGen.h" />
+    <ClInclude Include="Headers\EnemyAmmo.h" />
+    <ClInclude Include="Headers\TextClass.h" />
+    <ClInclude Include="Headers\Background.h" />
+    <ClInclude Include="Headers\MitovsHead.h" />
+    <ClInclude Include="Headers\GameObject.h" />
+    <ClInclude Include="Headers\StellasHead.h" />
+    <ClInclude Include="Headers\Months.h" />
+    <ClInclude Include="Headers\TougherEnemy.h" />
+    <ClInclude Include="Headers\TougherEnemyGen.h" />
+    <ClInclude Include="Headers\Turret.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="pictures\kungfu.bmp" />
@@ -150,24 +169,6 @@
     <Font Include="fonts\Lato-Bold.ttf" />
     <Font Include="fonts\Lato-Light.ttf" />
     <Font Include="fonts\Lato-Regular.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Headers\Ammo.h" />
-    <ClInclude Include="Headers\Background.h" />
-    <ClInclude Include="Headers\BasicEnemy.h" />
-    <ClInclude Include="Headers\BasicEnemyGen.h" />
-    <ClInclude Include="Headers\EnemyAmmo.h" />
-    <ClInclude Include="Headers\EnemyAmmoGen.h" />
-    <ClInclude Include="Headers\GameObject.h" />
-    <ClInclude Include="Headers\Generator.h" />
-    <ClInclude Include="Headers\GameEndingScreen.h" />
-    <ClInclude Include="Headers\MitovsHead.h" />
-    <ClInclude Include="Headers\Months.h" />
-    <ClInclude Include="Headers\StellasHead.h" />
-    <ClInclude Include="Headers\TextClass.h" />
-    <ClInclude Include="Headers\TougherEnemy.h" />
-    <ClInclude Include="Headers\TougherEnemyGen.h" />
-    <ClInclude Include="Headers\Turret.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

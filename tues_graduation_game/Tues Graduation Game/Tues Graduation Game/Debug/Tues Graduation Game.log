@@ -1,2 +1,10 @@
-﻿  Tues Graduation Game.vcxproj -> E:\Tues Graduation Game\tues_graduation_game\tues_graduation_game\Tues Graduation Game\Debug\Tues Graduation Game.exe
-  Tues Graduation Game.vcxproj -> E:\Tues Graduation Game\tues_graduation_game\tues_graduation_game\Tues Graduation Game\Debug\Tues Graduation Game.pdb (Partial PDB)
+﻿  Turret.cpp
+c:\users\desktop\documents\github\tues_graduation_game\tues graduation game\tues graduation game\turret.cpp(108): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Compiling...
+  GameEngine.cpp
+c:\users\desktop\documents\github\tues_graduation_game\tues graduation game\tues graduation game\gameengine.cpp(77): warning C4018: '<': signed/unsigned mismatch
+c:\users\desktop\documents\github\tues_graduation_game\tues graduation game\tues graduation game\gameengine.cpp(97): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Tues Graduation Game.vcxproj -> C:\Users\Desktop\Documents\GitHub\tues_graduation_game\Tues Graduation Game\Debug\Tues Graduation Game.exe
+  Tues Graduation Game.vcxproj -> C:\Users\Desktop\Documents\GitHub\tues_graduation_game\Tues Graduation Game\Debug\Tues Graduation Game.pdb (Partial PDB)

@@ -12,7 +12,7 @@ class BasicEnemy : public GameObject
 	int speedY;
 	vector <GameObject*> *gameObjects_;
 	EnemyAmmoGen *ammoGen_;
-	
+
 
 public:
 	BasicEnemy(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObject);

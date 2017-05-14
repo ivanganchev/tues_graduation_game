@@ -40,7 +40,7 @@ int main()
 
 
 
-	window = SDL_CreateWindow("TUES Graduation Game", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);	
+	window = SDL_CreateWindow("TUES Graduation Game", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 	//window = SDL_SetVideoMode(640, 480, 32, SDL_SWSURFACE);
 	screenSurface = SDL_GetWindowSurface(window);
 
@@ -67,7 +67,7 @@ int main()
 	gameObjects.push_back(&months);
 	gameObjects.push_back(&spaceship);
 
-	
+
 
 	while (!quit)
 	{
@@ -78,11 +78,11 @@ int main()
 		{
 			if (gameObjects[i]->isMovable() == true)
 			{
- 				gameObjects[i]->move();
+				gameObjects[i]->move();
 			}
 
 
-			if(!gameObjects[i]->isVisible())
+			if (!gameObjects[i]->isVisible())
 			{
 				delArray.push_back(i);
 			}
@@ -109,12 +109,12 @@ int main()
 				quit = true;
 			}
 		}
-		
+
 		SDL_UpdateWindowSurface(window);
 		SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
-		SDL_Delay(1000/FRAMES_PER_SECOND);
+		SDL_Delay(1000 / FRAMES_PER_SECOND);
 	}
-	
-	
+
+
 	return 0;
 }

@@ -20,7 +20,7 @@ GameObject* Generator::create_object()
 }
 
 void Generator::add(int fromSec, int toSec)
-{   
+{
 	int interval = (fromSec + rand() % (toSec - fromSec + 1)) * 1000;
 	if (lastTime_ + interval <= SDL_GetTicks()) {
 		GameObject* obj = create_object();
@@ -28,7 +28,7 @@ void Generator::add(int fromSec, int toSec)
 		lastTime_ = SDL_GetTicks();
 		lastObj_ = obj;
 	}
-	
+
 }
 
 GameObject* Generator::get_object()

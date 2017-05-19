@@ -10,11 +10,8 @@ MitovsHead::MitovsHead(SDL_Surface* screenSurface, SDL_Window* window) : GameObj
 
 void MitovsHead::move()
 {
-	x_+= 6;
-	if (x_ == 1350)
-	{
-		x_ = -50;
-	}
+	y_ = 30*sin(x_) + 50;
+	x_ += 6;
 
 }
 

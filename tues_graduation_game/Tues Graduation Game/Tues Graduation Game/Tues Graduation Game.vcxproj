@@ -133,8 +133,11 @@
     <ClCompile Include="Generator.cpp" />
     <ClCompile Include="BasicEnemyGen.cpp" />
     <ClCompile Include="EnemyAmmo.cpp" />
+    <ClCompile Include="Explosion.cpp" />
+    <ClCompile Include="MitovsHead.cpp" />
     <ClCompile Include="Months.cpp" />
     <ClCompile Include="GameEndingScreen.cpp" />
+    <ClCompile Include="MitovGenerator.cpp" />
     <ClCompile Include="TougherEnemy.cpp" />
     <ClCompile Include="TougherEnemyGen.cpp" />
     <ClCompile Include="Turret.cpp" />
@@ -158,9 +161,11 @@
     <ClInclude Include="Headers\BasicEnemyGen.h" />
     <ClInclude Include="Headers\EnemyAmmo.h" />
     <ClInclude Include="Headers\EnemyAmmoGen.h" />
+    <ClInclude Include="Headers\Explosion.h" />
     <ClInclude Include="Headers\GameObject.h" />
     <ClInclude Include="Headers\Generator.h" />
     <ClInclude Include="Headers\GameEndingScreen.h" />
+    <ClInclude Include="Headers\MitovGenerator.h" />
     <ClInclude Include="Headers\MitovsHead.h" />
     <ClInclude Include="Headers\Months.h" />
     <ClInclude Include="Headers\StellasHead.h" />

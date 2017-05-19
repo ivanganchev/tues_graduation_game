@@ -16,6 +16,8 @@
 #include "Headers/BasicEnemy.h"
 #include "Headers/EnemyAmmo.h"
 #include "Headers/EnemyAmmoGen.h"
+#include "Headers/MitovsHead.h"
+#include "Headers/MitovGenerator.h"
 #include <cstdio>
 #include <ctime>
 #include <SDL_ttf.h>
@@ -59,7 +61,7 @@ int main()
 
 
 	BasicEnemyGen enemySpaceshipGen(screenSurface, window, &gameObjects);
-
+	MitovGenerator mitovGen(screenSurface, window, &gameObjects);
 
 	gameObjects.push_back(&background1);
 	gameObjects.push_back(&background2);
@@ -72,6 +74,7 @@ int main()
 	while (!quit)
 	{
 		enemySpaceshipGen.add(2, 5);
+		mitovGen.add(20, 30);
 		vector<int> delArray;
 
 		for (int i = 0; i < gameObjects.size(); i++)

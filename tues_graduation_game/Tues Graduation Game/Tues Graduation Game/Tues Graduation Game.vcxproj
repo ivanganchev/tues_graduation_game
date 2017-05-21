@@ -132,6 +132,8 @@
     <ClCompile Include="BasicEnemyGen.cpp" />
     <ClCompile Include="EnemyAmmo.cpp" />
     <ClCompile Include="GameEndingScreen.cpp" />
+    <ClCompile Include="TougherEnemyAmmoGen.cpp" />
+    <ClCompile Include="TougherEnemyAmmo.cpp" />
     <ClCompile Include="TougherEnemyGen.cpp" />
     <ClCompile Include="TougherEnemy.cpp" />
     <ClCompile Include="Months.cpp" />
@@ -156,6 +158,8 @@
     <ClInclude Include="Headers\StellasHead.h" />
     <ClInclude Include="Headers\Months.h" />
     <ClInclude Include="Headers\TougherEnemy.h" />
+    <ClInclude Include="Headers\TougherEnemyAmmo.h" />
+    <ClInclude Include="Headers\TougherEnemyAmmoGen.h" />
     <ClInclude Include="Headers\TougherEnemyGen.h" />
     <ClInclude Include="Headers\Turret.h" />
   </ItemGroup>

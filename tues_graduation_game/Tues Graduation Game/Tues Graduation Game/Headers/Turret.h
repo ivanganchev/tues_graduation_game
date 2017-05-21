@@ -20,7 +20,7 @@ class Turret : public GameObject
 	void moveRight();
 	void fire();
 	int direction_ = 0;
-	int clipSize_ = 15;
+	int clipSize_;
 	int timer_ = 0;
 
 protected:

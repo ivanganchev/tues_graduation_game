@@ -16,6 +16,7 @@
 #include "Headers/BasicEnemy.h"
 #include "Headers/EnemyAmmo.h"
 #include "Headers/EnemyAmmoGen.h"
+#include "Headers/TougherEnemyGen.h"
 #include <cstdio>
 #include <ctime>
 #include <SDL_ttf.h>
@@ -59,7 +60,7 @@ int main()
 
 
 	BasicEnemyGen enemySpaceshipGen(screenSurface, window, &gameObjects);
-
+	TougherEnemyGen tougherSpaceshipGen(screenSurface, window, &gameObjects);
 
 	gameObjects.push_back(&background1);
 	gameObjects.push_back(&background2);

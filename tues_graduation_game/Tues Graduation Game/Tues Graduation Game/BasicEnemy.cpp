@@ -45,9 +45,6 @@ void BasicEnemy::fire()
 
 void BasicEnemy::move()
 {
-
-
-
 	if (y_ < limit)
 	{
 		y_ += speedY;

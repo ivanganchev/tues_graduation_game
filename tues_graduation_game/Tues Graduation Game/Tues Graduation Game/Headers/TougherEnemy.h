@@ -3,8 +3,8 @@
 #include "GameObject.h"
 #include <vector>
 #include "Generator.h"
-#include "EnemyAmmo.h"
-#include "EnemyAmmoGen.h"
+#include "TougherEnemyAmmo.h"
+#include "TougherEnemyAmmoGen.h"
 
 class TougherEnemy : public GameObject
 {
@@ -12,7 +12,7 @@ class TougherEnemy : public GameObject
 	int speedX;
 	int speedY;
 	vector <GameObject*> *gameObjects_;
-	EnemyAmmoGen *ammoGen_;
+	TougherEnemyAmmoGen *ammoGen_;
 
 
 public:

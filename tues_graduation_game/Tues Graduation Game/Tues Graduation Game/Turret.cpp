@@ -52,6 +52,7 @@ Turret::Turret(SDL_Surface * screenSurface, SDL_Window * window, vector <GameObj
 	gameObjects_ = gameObject;
 	moveFlag_ = true;
 	endFlag_ = 0;
+	clipSize_ = 3 + rand() % 12;
 }
 
 
@@ -70,7 +71,7 @@ void Turret::move()
 				fire();
 			}
 
-			if (clipSize_ <= 0 && SDL_GetTicks() - timer_ >= 2000)
+			if (clipSize_ <= 0 && (SDL_GetTicks() - timer_) >= 2000)
 			{
 				clipSize_ = 15;
 			}

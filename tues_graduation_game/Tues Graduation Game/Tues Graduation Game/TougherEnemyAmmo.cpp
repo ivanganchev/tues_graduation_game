@@ -16,7 +16,6 @@ TougherEnemyAmmo::TougherEnemyAmmo(string name, SDL_Surface * screenSurface, SDL
 void TougherEnemyAmmo::move()
 {
 	int h, w;
-	y_ += 10;
 	if (this->get_name() == "middle")
 	{
 		y_ += 10;

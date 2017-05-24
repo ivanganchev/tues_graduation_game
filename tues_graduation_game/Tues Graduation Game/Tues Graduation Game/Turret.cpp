@@ -52,7 +52,7 @@ Turret::Turret(SDL_Surface * screenSurface, SDL_Window * window, vector <GameObj
 	gameObjects_ = gameObject;
 	moveFlag_ = true;
 	endFlag_ = 0;
-	clipSize_ = 3 + rand() % 12;
+	clipSize_ = 15;
 }
 
 

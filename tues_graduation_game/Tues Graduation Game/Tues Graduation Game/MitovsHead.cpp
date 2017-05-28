@@ -1,9 +1,10 @@
 #include <SDL.h>
-#include "MitovsHead.h"
-#include "GameObject.h"
+#include "Headers/MitovsHead.h"
+#include "Headers/GameObject.h"
 #include "Months.h"
 #include <time.h>
 #include "MitovsAmmo.h" 
+
 
 
 MitovsHead::MitovsHead(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObject) : GameObject("pictures/mitov2.png", screenSurface, window)
@@ -16,11 +17,13 @@ MitovsHead::MitovsHead(SDL_Surface* screenSurface, SDL_Window* window, vector <G
 
 void MitovsHead::move()
 {
+	
 	int h, w;
 	SDL_GetWindowSize(window_, &w, &h);
 
 	if (Months::month_select < 2)
 	{
+		
 		y_ = 30*sin(x_) + 50;
 		x_ += 6;
 	}

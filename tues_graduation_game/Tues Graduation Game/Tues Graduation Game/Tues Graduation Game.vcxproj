@@ -136,12 +136,10 @@
     <ClCompile Include="Explosion.cpp" />
     <ClCompile Include="MitovsAmmo.cpp" />
     <ClCompile Include="MitovsAmmoGen.cpp" />
-    <ClCompile Include="TougherEnemyAmmo.cpp" />
     <ClCompile Include="MitovsHead.cpp" />
     <ClCompile Include="Months.cpp" />
     <ClCompile Include="GameEndingScreen.cpp" />
     <ClCompile Include="MitovGenerator.cpp" />
-    <ClCompile Include="TougherEnemy.cpp" />
     <ClCompile Include="TougherEnemyGen.cpp" />
     <ClCompile Include="Turret.cpp" />
     <ClCompile Include="TextClass.cpp" />

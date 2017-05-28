@@ -9,7 +9,7 @@
 
 TougherEnemy::TougherEnemy(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObjects) : GameObject("pictures/valkuplane.png", screenSurface, window)
 {
-	ammoGen_ = new EnemyAmmoGen(screenSurface, window, gameObjects);
+	ammoGen_ = new TougherEnemyAmmoGen(screenSurface, window, gameObjects);
 	gameObjects_ = gameObjects;
 	moveFlag_ = true;
 	srand(time(NULL));
@@ -21,7 +21,6 @@ TougherEnemy::TougherEnemy(SDL_Surface* screenSurface, SDL_Window* window, vecto
 		speedX = -speedX;
 	}
 }
-
 
 void TougherEnemy::move()
 {

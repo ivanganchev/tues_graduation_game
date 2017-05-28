@@ -1,8 +1,6 @@
-#include <SDL_ttf.h>
-#include <SDL.h>
-#include "Headers/Months.h"
 #include "Headers/TextClass.h"
 #include "Headers/GameObject.h"
+#include "Headers/Months.h"
 
 using namespace std;
 
@@ -20,20 +18,20 @@ void Months::show()
 	unsigned int seconds, current_time;
 
 	int interval = 10000;
-	if (lastTime_ + interval <= SDL_GetTicks()) 
+	if (lastTime_ + interval <= SDL_GetTicks())
 	{
 		month_select++;
 		lastTime_ = SDL_GetTicks();
-	} 
+	}
 
 	
 
 	TextClass::set_text(months_[month_select]);
 	TextClass::show();
 	seconds = 0;
-		
-	
-		
+
+
+
 
 }
 

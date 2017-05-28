@@ -18,10 +18,14 @@ protected:
 public:
 	Generator(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObject);
 
+	Generator();
+
 	void add(int fromSec, int toSec);
-	
+
+	void tougherAdd(int fromSec, int toSec);
+
 	virtual GameObject* create_object();
 
 	GameObject* get_object();
-	
+
 };

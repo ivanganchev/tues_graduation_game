@@ -1,0 +1,26 @@
+﻿GameEngine.obj : error LNK2019: unresolved external symbol SDL_MapRGB referenced in function main
+GameEngine.obj : error LNK2019: unresolved external symbol SDL_FillRect referenced in function main
+GameEngine.obj : error LNK2019: unresolved external symbol SDL_CreateWindow referenced in function main
+GameEngine.obj : error LNK2019: unresolved external symbol SDL_GetWindowSurface referenced in function main
+GameEngine.obj : error LNK2019: unresolved external symbol SDL_UpdateWindowSurface referenced in function main
+GameEngine.obj : error LNK2019: unresolved external symbol SDL_PollEvent referenced in function main
+Turret.obj : error LNK2001: unresolved external symbol SDL_PollEvent
+GameEngine.obj : error LNK2019: unresolved external symbol SDL_Delay referenced in function main
+GameObject.obj : error LNK2019: unresolved external symbol SDL_GetError referenced in function "public: __cdecl GameObject::GameObject(char const *,struct SDL_Surface *,struct SDL_Window *)" (??0GameObject@@QEAA@PEBDPEAUSDL_Surface@@PEAUSDL_Window@@@Z)
+TextClass.obj : error LNK2001: unresolved external symbol SDL_GetError
+GameObject.obj : error LNK2019: unresolved external symbol SDL_UpperBlit referenced in function "public: virtual void __cdecl GameObject::show(void)" (?show@GameObject@@UEAAXXZ)
+TextClass.obj : error LNK2001: unresolved external symbol SDL_UpperBlit
+GameObject.obj : error LNK2019: unresolved external symbol SDL_GetWindowSize referenced in function "public: __cdecl GameObject::GameObject(char const *,struct SDL_Surface *,struct SDL_Window *)" (??0GameObject@@QEAA@PEBDPEAUSDL_Surface@@PEAUSDL_Window@@@Z)
+BasicEnemy.obj : error LNK2001: unresolved external symbol SDL_GetWindowSize
+EnemyAmmo.obj : error LNK2001: unresolved external symbol SDL_GetWindowSize
+GameObject.obj : error LNK2019: unresolved external symbol IMG_Init referenced in function "public: __cdecl GameObject::GameObject(char const *,struct SDL_Surface *,struct SDL_Window *)" (??0GameObject@@QEAA@PEBDPEAUSDL_Surface@@PEAUSDL_Window@@@Z)
+GameObject.obj : error LNK2019: unresolved external symbol IMG_Load referenced in function "public: __cdecl GameObject::GameObject(char const *,struct SDL_Surface *,struct SDL_Window *)" (??0GameObject@@QEAA@PEBDPEAUSDL_Surface@@PEAUSDL_Window@@@Z)
+Generator.obj : error LNK2019: unresolved external symbol SDL_GetTicks referenced in function "public: __cdecl Generator::Generator(struct SDL_Surface *,struct SDL_Window *,class std::vector<class GameObject *,class std::allocator<class GameObject *> > *)" (??0Generator@@QEAA@PEAUSDL_Surface@@PEAUSDL_Window@@PEAV?$vector@PEAVGameObject@@V?$allocator@PEAVGameObject@@@std@@@std@@@Z)
+Months.obj : error LNK2001: unresolved external symbol SDL_GetTicks
+Turret.obj : error LNK2019: unresolved external symbol SDL_GetKeyboardState referenced in function "public: virtual void __cdecl Turret::move(void)" (?move@Turret@@UEAAXXZ)
+TextClass.obj : error LNK2019: unresolved external symbol TTF_Init referenced in function "public: virtual void __cdecl TextClass::show(void)" (?show@TextClass@@UEAAXXZ)
+TextClass.obj : error LNK2019: unresolved external symbol TTF_OpenFont referenced in function "public: virtual void __cdecl TextClass::show(void)" (?show@TextClass@@UEAAXXZ)
+TextClass.obj : error LNK2019: unresolved external symbol TTF_RenderText_Solid referenced in function "public: virtual void __cdecl TextClass::show(void)" (?show@TextClass@@UEAAXXZ)
+E:\SDL-devel\SDL2-2.0.5\lib\x86\SDL2main.lib : warning LNK4272: library machine type 'X86' conflicts with target machine type 'x64'
+E:\SDL-devel\SDL2-2.0.5\lib\x86\SDL2.lib : warning LNK4272: library machine type 'X86' conflicts with target machine type 'x64'
+E:\Tues Graduation Game\tues_graduation_game\tues_graduation_game\Tues Graduation Game\x64\Debug\Tues Graduation Game.exe : fatal error LNK1120: 17 unresolved externals

@@ -51,9 +51,6 @@
     <ClCompile Include="EnemyAmmoGen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TougherEnemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TougherEnemyGen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -67,9 +64,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MitovGenerator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TougherEnemyAmmo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MitovsAmmo.cpp">

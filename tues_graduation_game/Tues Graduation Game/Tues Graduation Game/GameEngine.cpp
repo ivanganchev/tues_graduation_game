@@ -104,7 +104,17 @@ int main()
 				delArray.push_back(i);
 			}
 			gameObjects[i]->show();
-
+			
+			if (months.isYearEnded()) 
+			{
+				while (!Mix_FadeOutMusic(3000) && Mix_PlayingMusic()) {
+					SDL_Delay(100);
+				}
+				months.setYear(false);
+				Mix_FreeMusic(bgm);
+				Mix_PlayMusic(ebgm, -1);
+			}
+			
 			if (gameObjects[i]->get_name() != "")
 			{
 				cout << gameObjects[i]->get_name() << endl;

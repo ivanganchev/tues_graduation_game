@@ -15,5 +15,7 @@ public:
 	static int month_select;
 	Months(SDL_Surface *screenSurface, SDL_Window *window);
 	void show();
+	bool isYearEnded();
+	void setYear(bool val);
 	string get_name();
 };

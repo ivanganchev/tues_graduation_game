@@ -21,7 +21,7 @@ void MitovsHead::move()
 	int h, w;
 	SDL_GetWindowSize(window_, &w, &h);
 
-	if (Months::month_select < 2)
+	if (Months::month_select < 11)
 	{
 		
 		y_ = 30*sin(x_) + 50;

@@ -49,14 +49,15 @@ void GameObject::init(SDL_Surface* screenSurface, SDL_Window* window)
 	y_ = 0;
 	window_ = window;
 	screenSurface_ = screenSurface;
+	srcrect = NULL;
+	animation = NULL;
 }
 
 void GameObject::show()
 {
 
-	SDL_Rect srcrect = { x_, y_, 250, 250 };
 	SDL_Rect dstrect = { x_, y_, 0, 0 };
-	SDL_BlitSurface(image_, NULL, screenSurface_, &dstrect);
+	SDL_BlitSurface(image_, srcrect, screenSurface_, &dstrect);
 }
 
 void GameObject::set_y(int y)
@@ -109,4 +110,9 @@ SDL_Surface* GameObject::get_image()
 void GameObject::setVisibility(bool visibility)
 {
 	isVisible_ = visibility;
+}
+
+GameObject* GameObject::getAnimation()
+{
+	return animation;
 }

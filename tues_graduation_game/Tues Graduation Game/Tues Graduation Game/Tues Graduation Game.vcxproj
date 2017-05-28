@@ -134,6 +134,7 @@
     <ClCompile Include="BasicEnemyGen.cpp" />
     <ClCompile Include="EnemyAmmo.cpp" />
     <ClCompile Include="Explosion.cpp" />
+    <ClCompile Include="Animation.cpp" />
     <ClCompile Include="MitovsAmmo.cpp" />
     <ClCompile Include="MitovsAmmoGen.cpp" />
     <ClCompile Include="MitovsHead.cpp" />
@@ -155,6 +156,7 @@
     <Font Include="fonts\Lato-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Headers\Animation.h" />
     <ClInclude Include="Headers\MitovsAmmo.h" />
     <ClInclude Include="Headers\Ammo.h" />
     <ClInclude Include="Headers\Background.h" />

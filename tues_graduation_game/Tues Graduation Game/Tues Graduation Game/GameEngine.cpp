@@ -20,6 +20,7 @@
 #include "Headers/MitovGenerator.h"
 #include "Headers/MitovsAmmo.h"
 #include "Headers/MitovsAmmoGen.h"
+#include "Animation.h"
 #include <cstdio>
 #include <ctime>
 #include <SDL_ttf.h>
@@ -73,7 +74,6 @@ int main()
 	gameObjects.push_back(&spaceship);
 
 
-
 	while (!quit)
 	{
 		
@@ -89,10 +89,11 @@ int main()
 
 
 
-			if (!gameObjects[i]->isVisible())
+			if (gameObjects[i]->getAnimation() != NULL)
 			{
-				delArray.push_back(i);
+ 				gameObjects.push_back(gameObjects[i]->getAnimation());
 			}
+
 			gameObjects[i]->show();
 
 			if (gameObjects[i]->get_name() != "")
@@ -101,7 +102,7 @@ int main()
 			}
 			if (gameObjects[i]->get_name() == "Months")
 			{
-				if (Months::month_select < 1)
+				if (Months::month_select < 11)
 				{
 					enemySpaceshipGen.add(2, 5);
 					mitovGen.add(20, 50);

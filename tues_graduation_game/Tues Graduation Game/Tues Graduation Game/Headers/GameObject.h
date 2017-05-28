@@ -24,8 +24,8 @@ protected:
 	int moveFlag_;
 	int isVisible_;
 	vector<string> targets_;
-
-
+	SDL_Rect *srcrect;
+	GameObject* animation;
 
 
 public:
@@ -45,4 +45,5 @@ public:
 	virtual string get_name();
 	SDL_Surface * get_image();
 	void setVisibility(bool visibility);
+	GameObject *getAnimation();
 };

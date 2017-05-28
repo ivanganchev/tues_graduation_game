@@ -11,6 +11,7 @@ class Months : public TextClass
 {
 	vector<string> months_;
 	int lastTime_;
+	bool endYear_ = false;
 public:
 	static int month_select;
 	Months(SDL_Surface *screenSurface, SDL_Window *window);

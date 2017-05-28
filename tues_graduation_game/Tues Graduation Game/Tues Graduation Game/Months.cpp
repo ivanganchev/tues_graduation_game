@@ -35,6 +35,16 @@ void Months::show()
 
 }
 
+bool Months::isYearEnded() 
+{
+	return endYear_;
+}
+
+void Months::setYear(bool val)
+{
+	endYear_ = val;
+}
+
 string Months::get_name()
 {
 	return "Months";

@@ -23,6 +23,7 @@
 #include <cstdio>
 #include <ctime>
 #include <SDL_ttf.h>
+#include <SDL_mixer.h>
 
 #undef main
 
@@ -42,7 +43,16 @@ int main()
 	vector <GameObject*> gameObjects;
 	const int FRAMES_PER_SECOND = 50;
 
+	SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
 
+	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) 
+	{
+		cout << "Error: " << Mix_GetError() << endl;
+	}
+
+	Mix_Music *ebgm = Mix_LoadMUS("music/ebgm.mp3");
+	Mix_Music *bgm = Mix_LoadMUS("music/bgm.mp3");
+	Mix_PlayMusic(bgm, -1);
 
 	window = SDL_CreateWindow("TUES Graduation Game", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 	//window = SDL_SetVideoMode(640, 480, 32, SDL_SWSURFACE);
@@ -168,7 +178,10 @@ int main()
 	
 		SDL_Delay(1000 / FRAMES_PER_SECOND);
 	}
+	
+	Mix_FreeMusic(ebgm);
 
+	Mix_Quit();
 
 	return 0;
 }

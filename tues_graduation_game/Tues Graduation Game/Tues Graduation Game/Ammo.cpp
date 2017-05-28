@@ -12,6 +12,7 @@ Ammo::Ammo(SDL_Surface * screenSurface, SDL_Window * window, vector <GameObject*
 	gameObjects_ = gameObject;
 	targets_ = { "EnemyAmmo", "BasicEnemy", "Mitov" };
 	moveFlag_ = true;
+	explosion_ = Mix_LoadWAV("music/explosion.wav");
 }
 
 void Ammo::move()
@@ -51,13 +52,13 @@ void Ammo::move()
 						break;
 					}
 				}
-
-				const char* container = "pictures/explosion.png";
-				Animation *a = new Animation(screenSurface_, window_, gameObjects_, container);
-				a->SetFrameSize(120, 120);
-				animation = a;
-				a->set_x(gameObjects_[i]->get_x());
-				a->set_y(gameObjects_[i]->get_y());
+				Mix_PlayChannel(0, explosion_, 1);
+				
+				Animation *exp = new Animation(screenSurface_, window_, gameObjects_, "pictures/explosion.png");
+				exp->SetFrameSize(120, 120);
+				exp->set_x(gameObjects_[i]->get_x());
+				exp->set_y(gameObjects_[i]->get_y());
+				animation = exp;
  				gameObjects_[i]->setVisibility(false);
 				setVisibility(false); 
 				break;

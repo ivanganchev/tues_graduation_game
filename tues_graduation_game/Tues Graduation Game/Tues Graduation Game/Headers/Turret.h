@@ -1,6 +1,7 @@
 #pragma once
 #include <SDL.h>
 #include <SDL_image.h>
+#include <SDL_mixer.h>
 #include "GameObject.h"
 #include <iostream>
 #include <vector>
@@ -22,6 +23,7 @@ class Turret : public GameObject
 	int direction_ = 0;
 	int clipSize_;
 	int timer_ = 0;
+	Mix_Chunk *fire_;
 
 protected:
 	SDL_Event keyEvent;

@@ -53,6 +53,7 @@ Turret::Turret(SDL_Surface * screenSurface, SDL_Window * window, vector <GameObj
 	moveFlag_ = true;
 	endFlag_ = 0;
 	clipSize_ = 15;
+	fire_ = Mix_LoadWAV("music/laser.wav");
 }
 
 
@@ -68,6 +69,7 @@ void Turret::move()
 		{
 			if (state[SDL_SCANCODE_SPACE] && clipSize_ > 0)
 			{
+				Mix_PlayChannel(0, fire_, 1);
 				fire();
 			}
 

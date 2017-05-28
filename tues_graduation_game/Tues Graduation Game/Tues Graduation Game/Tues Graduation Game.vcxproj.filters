@@ -51,9 +51,6 @@
     <ClCompile Include="EnemyAmmoGen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TougherEnemyGen.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GameEndingScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -127,12 +124,6 @@
     <ClInclude Include="Headers\TextClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Headers\TougherEnemy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Headers\TougherEnemyGen.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Headers\Turret.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -143,9 +134,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Headers\MitovGenerator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Headers\TougherEnemyAmmo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Headers\MitovsAmmo.h">

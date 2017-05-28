@@ -3,12 +3,12 @@
 #include "Headers/Ammo.h"
 #include "GameObject.h"
 #include <vector>
-
+#include "Headers/MitovsHead.h"
 
 Ammo::Ammo(SDL_Surface * screenSurface, SDL_Window * window, vector <GameObject*> gameObject): GameObject("pictures/laser.png", screenSurface, window)
 {
 	gameObjects_ = gameObject;
-	targets_ = {"EnemyAmmo", "BasicEnemy"};
+	targets_ = { "EnemyAmmo", "BasicEnemy", "Mitov" };
 	moveFlag_ = true;
 }
 
@@ -33,6 +33,22 @@ void Ammo::move()
 		{
 			if (obj->get_x() <= (x_ + image_->w / 2) && (obj->get_x() + obj->get_image()->w) >= (x_ + image_->w / 2) && y_ <= (obj->get_y() + obj->get_image()->h))
 			{
+				string tempS = obj->get_name();
+				if (tempS == "Mitov")
+				{
+					if (MitovsHead::health > 0)
+					{
+ 						MitovsHead::health--;
+						setVisibility(false);
+						break;
+					}
+					else
+					{
+						gameObjects_[i]->setVisibility(false);
+						setVisibility(false);
+						break;
+					}
+				}
  				gameObjects_[i]->setVisibility(false);
 				setVisibility(false); 
 				break;

@@ -69,6 +69,15 @@
     <ClCompile Include="MitovGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TougherEnemyAmmo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MitovsAmmo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MitovsAmmoGen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="pictures\kungfu.bmp">
@@ -140,6 +149,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Headers\MitovGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\TougherEnemyAmmo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\MitovsAmmo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\MitovsAmmoGen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

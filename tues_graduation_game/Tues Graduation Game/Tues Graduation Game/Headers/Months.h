@@ -12,7 +12,8 @@ class Months : public TextClass
 	vector<string> months_;
 	int lastTime_;
 public:
-
+	static int month_select;
 	Months(SDL_Surface *screenSurface, SDL_Window *window);
 	void show();
+	string get_name();
 };

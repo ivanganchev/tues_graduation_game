@@ -6,9 +6,9 @@
 
 using namespace std;
 
-int month_select = 0;
 
-Months::Months(SDL_Surface *screenSurface, SDL_Window *window) : TextClass(screenSurface, window), months_(vector <string>{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" })
+
+Months::Months(SDL_Surface *screenSurface, SDL_Window *window) : TextClass(screenSurface, window), months_(vector <string>{"September", "October", "November", "December","January", "February", "March", "April", "May", "June", "July",})
 {
 	lastTime_ = SDL_GetTicks();
 }
@@ -16,6 +16,7 @@ Months::Months(SDL_Surface *screenSurface, SDL_Window *window) : TextClass(scree
 
 void Months::show()
 {
+
 	unsigned int seconds, current_time;
 
 	int interval = 10000;
@@ -25,10 +26,7 @@ void Months::show()
 		lastTime_ = SDL_GetTicks();
 	} 
 
-	if (month_select > 11)
-	{
-		month_select = 0;
-	}
+	
 
 	TextClass::set_text(months_[month_select]);
 	TextClass::show();
@@ -38,3 +36,10 @@ void Months::show()
 		
 
 }
+
+string Months::get_name()
+{
+	return "Months";
+}
+
+int Months::month_select = 0;

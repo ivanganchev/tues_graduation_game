@@ -134,6 +134,9 @@
     <ClCompile Include="BasicEnemyGen.cpp" />
     <ClCompile Include="EnemyAmmo.cpp" />
     <ClCompile Include="Explosion.cpp" />
+    <ClCompile Include="MitovsAmmo.cpp" />
+    <ClCompile Include="MitovsAmmoGen.cpp" />
+    <ClCompile Include="TougherEnemyAmmo.cpp" />
     <ClCompile Include="MitovsHead.cpp" />
     <ClCompile Include="Months.cpp" />
     <ClCompile Include="GameEndingScreen.cpp" />
@@ -155,6 +158,7 @@
     <Font Include="fonts\Lato-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Headers\MitovsAmmo.h" />
     <ClInclude Include="Headers\Ammo.h" />
     <ClInclude Include="Headers\Background.h" />
     <ClInclude Include="Headers\BasicEnemy.h" />
@@ -166,11 +170,13 @@
     <ClInclude Include="Headers\Generator.h" />
     <ClInclude Include="Headers\GameEndingScreen.h" />
     <ClInclude Include="Headers\MitovGenerator.h" />
+    <ClInclude Include="Headers\MitovsAmmoGen.h" />
     <ClInclude Include="Headers\MitovsHead.h" />
     <ClInclude Include="Headers\Months.h" />
     <ClInclude Include="Headers\StellasHead.h" />
     <ClInclude Include="Headers\TextClass.h" />
     <ClInclude Include="Headers\TougherEnemy.h" />
+    <ClInclude Include="Headers\TougherEnemyAmmo.h" />
     <ClInclude Include="Headers\TougherEnemyGen.h" />
     <ClInclude Include="Headers\Turret.h" />
   </ItemGroup>

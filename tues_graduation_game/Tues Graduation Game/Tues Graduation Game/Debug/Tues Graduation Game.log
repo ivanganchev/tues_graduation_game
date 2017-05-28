@@ -1,5 +1,40 @@
-﻿  GameEngine.cpp
-e:\tues graduation game\tues_graduation_game\tues_graduation_game\tues graduation game\tues graduation game\gameengine.cpp(80): warning C4018: '<': signed/unsigned mismatch
-e:\tues graduation game\tues_graduation_game\tues_graduation_game\tues graduation game\tues graduation game\gameengine.cpp(100): warning C4018: '<': signed/unsigned mismatch
+﻿  TextClass.cpp
+  Turret.cpp
+e:\tues graduation game\tues_graduation_game\tues_graduation_game\tues graduation game\tues graduation game\turret.cpp(97): warning C4018: '<': signed/unsigned mismatch
+  TougherEnemyGen.cpp
+  TougherEnemy.cpp
+e:\tues graduation game\tues_graduation_game\tues_graduation_game\tues graduation game\tues graduation game\tougherenemy.cpp(15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  MitovGenerator.cpp
+  GameEndingScreen.cpp
+  Months.cpp
+e:\tues graduation game\tues_graduation_game\tues_graduation_game\tues graduation game\tues graduation game\months.cpp(23): warning C4018: '<=': signed/unsigned mismatch
+e:\tues graduation game\tues_graduation_game\tues_graduation_game\tues graduation game\tues graduation game\months.cpp(20): warning C4101: 'current_time': unreferenced local variable
+  MitovsHead.cpp
+e:\tues graduation game\tues_graduation_game\tues_graduation_game\tues graduation game\tues graduation game\mitovshead.cpp(24): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+e:\tues graduation game\tues_graduation_game\tues_graduation_game\tues graduation game\tues graduation game\mitovshead.cpp(53): warning C4018: '<=': signed/unsigned mismatch
+e:\tues graduation game\tues_graduation_game\tues_graduation_game\tues graduation game\tues graduation game\mitovshead.cpp(101): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  TougherEnemyAmmo.cpp
+  MitovsAmmoGen.cpp
+  MitovsAmmo.cpp
+  Explosion.cpp
+  EnemyAmmo.cpp
+  BasicEnemyGen.cpp
+  Generator.cpp
+e:\tues graduation game\tues_graduation_game\tues_graduation_game\tues graduation game\tues graduation game\generator.cpp(25): warning C4018: '<=': signed/unsigned mismatch
+  BasicEnemy.cpp
+e:\tues graduation game\tues_graduation_game\tues_graduation_game\tues graduation game\tues graduation game\basicenemy.cpp(17): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Background.cpp
+  GameObject.cpp
+e:\tues graduation game\tues_graduation_game\tues_graduation_game\tues graduation game\tues graduation game\gameobject.cpp(90): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+e:\tues graduation game\tues_graduation_game\tues_graduation_game\tues graduation game\tues graduation game\gameobject.cpp(95): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+  GameEngine.cpp
+e:\tues graduation game\tues_graduation_game\tues_graduation_game\tues graduation game\tues graduation game\gameengine.cpp(83): warning C4018: '<': signed/unsigned mismatch
+e:\tues graduation game\tues_graduation_game\tues_graduation_game\tues graduation game\tues graduation game\gameengine.cpp(133): warning C4018: '<': signed/unsigned mismatch
+  EnemyAmmoGen.cpp
+  Generating Code...
+  Compiling...
+  Ammo.cpp
+e:\tues graduation game\tues_graduation_game\tues_graduation_game\tues graduation game\tues graduation game\ammo.cpp(25): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
   Tues Graduation Game.vcxproj -> E:\Tues Graduation Game\tues_graduation_game\tues_graduation_game\Tues Graduation Game\Debug\Tues Graduation Game.exe
   Tues Graduation Game.vcxproj -> E:\Tues Graduation Game\tues_graduation_game\tues_graduation_game\Tues Graduation Game\Debug\Tues Graduation Game.pdb (Partial PDB)

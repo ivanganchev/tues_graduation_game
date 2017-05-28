@@ -13,8 +13,8 @@ MitovGenerator::MitovGenerator(SDL_Surface* screenSurface, SDL_Window* window, v
 
 GameObject* MitovGenerator::create_object()
 {
-	mitov_ = new MitovsHead(screenSurface_, window_);
-	int xPos = rand() / 100 * 5;
+	mitov_ = new MitovsHead(screenSurface_, window_, gameObject_);
+	int xPos = rand() % 10;
 	int yPos = -rand() % 500 + 1;
 	mitov_->set_x(xPos);
 	mitov_->set_y(yPos);

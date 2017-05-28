@@ -18,6 +18,8 @@
 #include "Headers/EnemyAmmoGen.h"
 #include "Headers/MitovsHead.h"
 #include "Headers/MitovGenerator.h"
+#include "Headers/MitovsAmmo.h"
+#include "Headers/MitovsAmmoGen.h"
 #include <cstdio>
 #include <ctime>
 #include <SDL_ttf.h>
@@ -52,7 +54,7 @@ int main()
 	Background background2(screenSurface, window);
 	background2.set_y(-SCREEN_HEIGHT);
 
-	//MitovsHead mitovsHead(screenSurface, window);
+	MitovsHead mitovsHead(screenSurface, window, &gameObjects);
 	Months months(screenSurface, window);
 
 	Turret spaceship(screenSurface, window, &gameObjects);
@@ -62,10 +64,11 @@ int main()
 
 	BasicEnemyGen enemySpaceshipGen(screenSurface, window, &gameObjects);
 	MitovGenerator mitovGen(screenSurface, window, &gameObjects);
+	
 
 	gameObjects.push_back(&background1);
 	gameObjects.push_back(&background2);
-	//gameObjects.push_back(&mitovsHead);
+	gameObjects.push_back(&mitovsHead);
 	gameObjects.push_back(&months);
 	gameObjects.push_back(&spaceship);
 
@@ -73,8 +76,8 @@ int main()
 
 	while (!quit)
 	{
-		enemySpaceshipGen.add(2, 5);
-		mitovGen.add(20, 30);
+		
+		
 		vector<int> delArray;
 
 		for (int i = 0; i < gameObjects.size(); i++)
@@ -95,13 +98,58 @@ int main()
 			{
 				cout << gameObjects[i]->get_name() << endl;
 			}
+			if (gameObjects[i]->get_name() == "Months")
+			{
+				if (Months::month_select < 1)
+				{
+					enemySpaceshipGen.add(2, 5);
+					mitovGen.add(20, 50);
+				}
+				else
+				{	
+					if (find(gameObjects.begin(), gameObjects.end(), &mitovsHead) == gameObjects.end())
+					{
+						gameObjects.push_back(&mitovsHead);
+					}
+					
+				}
+			}
 		}
 
-		for (int i = 0; i < delArray.size(); i++)
+		/*for (int i = 0; i < delArray.size(); i++)
 		{
 			//delete gameObjects[i];
+			if (gameObjects[delArray[i]]->isVisible()) {
+			cout << delArray[i];
+			}
+			
 			gameObjects.erase(gameObjects.begin() + delArray[i]);
+		}*/
+
+
+		while (true)
+		{
+			int index = -1;
+			for (int i = 0; i < gameObjects.size(); i++)
+			{
+				if (!gameObjects[i]->isVisible())
+				{
+					index = i;
+					break;
+				}
+			}
+
+			if (index > -1)
+			{
+				gameObjects.erase(gameObjects.begin() + index);
+			}
+			else
+			{
+				break;
+			}
+			
 		}
+
 		//level[current_level].start();
 
 

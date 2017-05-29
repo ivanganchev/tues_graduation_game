@@ -10,7 +10,7 @@ Ammo::Ammo(SDL_Surface * screenSurface, SDL_Window * window, vector <GameObject*
 {
 	
 	gameObjects_ = gameObject;
-	targets_ = { "EnemyAmmo", "BasicEnemy", "Mitov" };
+	targets_ = { "EnemyAmmo", "BasicEnemy", "Mitov", "TougherEnemy" };
 	moveFlag_ = true;
 	explosion_ = Mix_LoadWAV("music/explosion.wav");
 }

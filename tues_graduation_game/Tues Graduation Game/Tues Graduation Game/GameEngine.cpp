@@ -75,7 +75,7 @@ int main()
 
 	BasicEnemyGen enemySpaceshipGen(screenSurface, window, &gameObjects);
 	MitovGenerator mitovGen(screenSurface, window, &gameObjects);
-	
+	TougherEnemyGen tougherSpaceshipGen(screenSurface, window, &gameObjects);
 
 	gameObjects.push_back(&background1);
 	gameObjects.push_back(&background2);
@@ -125,6 +125,7 @@ int main()
 				if (Months::month_select < 11)
 				{
 					enemySpaceshipGen.add(2, 5);
+					tougherSpaceshipGen.add(10, 20);
 					mitovGen.add(20, 50);
 				}
 				else

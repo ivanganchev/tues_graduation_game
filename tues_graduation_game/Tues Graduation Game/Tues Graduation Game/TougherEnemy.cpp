@@ -32,7 +32,7 @@ void TougherEnemy::move()
 	{
 		x_ += speedX;
 	}
-	if (SDL_GetTicks() % 100 == 0) 
+	if (SDL_GetTicks() % 50 == 0) 
 	{
 		GameObject* obj = new TougherEnemyAmmo("right", screenSurface_, window_, gameObjects_);
 		obj->set_x(x_ + 65);

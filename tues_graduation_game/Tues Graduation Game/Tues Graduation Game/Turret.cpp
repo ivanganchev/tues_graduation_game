@@ -54,6 +54,7 @@ Turret::Turret(SDL_Surface * screenSurface, SDL_Window * window, vector <GameObj
 	endFlag_ = 0;
 	clipSize_ = 15;
 	fire_ = Mix_LoadWAV("music/laser.wav");
+	health_ = 5;
 }
 
 
@@ -119,10 +120,20 @@ void Turret::move()
 		{
 			if (obj->get_x() <= (x_ + image_->w / 2) && (obj->get_x() + obj->get_image()->w) >= (x_ + image_->w / 2) && (y_ - image_->h) <= (obj->get_y() - obj->get_image()->h))
 			{
-				(*gameObjects_)[i]->setVisibility(false);
-				setVisibility(false);
-				endFlag_ = 1;
-				break;
+				if (health_ > 0)
+				{
+					health_--;
+					(*gameObjects_)[i]->setVisibility(false);
+				}
+				else
+				{
+
+					(*gameObjects_)[i]->setVisibility(false);
+					setVisibility(false);
+					endFlag_ = 1;
+					break;
+				}
+				
 			}
 		}
 	}

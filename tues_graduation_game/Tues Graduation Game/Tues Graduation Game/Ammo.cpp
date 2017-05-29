@@ -13,6 +13,7 @@ Ammo::Ammo(SDL_Surface * screenSurface, SDL_Window * window, vector <GameObject*
 	targets_ = { "EnemyAmmo", "BasicEnemy", "Mitov", "MitovsAmmo"};
 	moveFlag_ = true;
 	explosion_ = Mix_LoadWAV("music/explosion.wav");
+	mHit_ = Mix_LoadWAV("music/mitovhit.wav");
 }
 
 void Ammo::move()
@@ -41,6 +42,7 @@ void Ammo::move()
 				{
 					if (MitovsHead::health > 0)
 					{
+						Mix_PlayChannel(0, mHit_, 1);
  						MitovsHead::health--;
 						setVisibility(false);
 						break;

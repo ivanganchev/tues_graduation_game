@@ -9,10 +9,23 @@
 
 MitovsHead::MitovsHead(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObject) : GameObject("pictures/mitov2.png", screenSurface, window)
 {
+	int h, w;
+	SDL_GetWindowSize(window_, &w, &h);
 	gen_ = new MitovsAmmoGen(screenSurface, window, gameObject);
 	gameObjects_ = gameObject;
 	moveFlag_ = true;
 	lastTime_ = SDL_GetTicks();
+	int r;
+	srand(time(NULL));
+	if (r = rand() % 2 == 0)
+	{
+		this->direction_ = 1;
+	}
+	else
+	{
+		this->direction_ = -1;
+		this->x_ = w;
+	}
 }
 
 void MitovsHead::move()
@@ -23,9 +36,8 @@ void MitovsHead::move()
 
 	if (Months::month_select < 11)
 	{
-		
 		y_ = 30*sin(x_) + 50;
-		x_ += 6;
+		this->x_ += direction_ * 6;
 	}
 	else
 	{
@@ -49,15 +61,15 @@ void MitovsHead::move()
 		}
 		x_ += direction_ * 10;
 		y_ = finalMove(x_);
-		
+		if (lastTime_ + 20000 <= SDL_GetTicks())
+		{
+			rain_ammo();
+			lastTime_ = SDL_GetTicks();
+		}
 	}
 	fire();
 	beatenMitov();
-	if (lastTime_ + 20000 <= SDL_GetTicks())
-	{
-		rain_ammo();
-		lastTime_ = SDL_GetTicks();
-	}
+	
 
 	if (health == 0)
 	{
@@ -135,20 +147,21 @@ void MitovsHead::fire()
 
 void MitovsHead::beatenMitov()
 {
-	if (health <= 75 && health > 50)
+	if (health <= 85 && health > 70)
 	{
 		image_path_ = "pictures/beatenMitov1.png";
 		image_ = IMG_Load(image_path_);
 	}
-	else if (health <= 50 && health > 25)
+	else if (health <= 70 && health > 50)
 	{
 		image_path_ = "pictures/beatenMitov2.png";
 		image_ = IMG_Load(image_path_);
 	}
-	else if (health <= 25 && health > 0)
+	else if (health <= 50  && health > 30)
 	{
 		image_path_ = "pictures/beatenMitov3.png";
 		image_ = IMG_Load(image_path_);
+
 	}
 }
 

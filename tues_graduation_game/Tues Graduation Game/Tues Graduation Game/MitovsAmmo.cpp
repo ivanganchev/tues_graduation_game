@@ -5,7 +5,7 @@
 #include <vector>
 
 
-MitovsAmmo::MitovsAmmo(SDL_Surface * screenSurface, SDL_Window * window, vector <GameObject*> *gameObject) : GameObject("pictures/gotsev.png", screenSurface, window)
+MitovsAmmo::MitovsAmmo(SDL_Surface * screenSurface, SDL_Window * window, vector <GameObject*> *gameObject) : GameObject("pictures/mitovAmmo.png", screenSurface, window)
 {
 	targets_ = { "Turret" };
 	gameObject_ = gameObject;

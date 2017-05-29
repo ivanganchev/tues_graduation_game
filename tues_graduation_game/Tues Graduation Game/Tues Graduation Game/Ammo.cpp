@@ -6,11 +6,11 @@
 #include "Headers/MitovsHead.h"
 #include "Headers/Animation.h"
 
-Ammo::Ammo(SDL_Surface * screenSurface, SDL_Window * window, vector <GameObject*> gameObject): GameObject("pictures/laser.png", screenSurface, window)
+Ammo::Ammo(SDL_Surface * screenSurface, SDL_Window * window, vector <GameObject*> gameObject): GameObject("pictures/laserv2.png", screenSurface, window)
 {
 	
 	gameObjects_ = gameObject;
-	targets_ = { "EnemyAmmo", "BasicEnemy", "Mitov" };
+	targets_ = { "EnemyAmmo", "BasicEnemy", "Mitov", "MitovsAmmo"};
 	moveFlag_ = true;
 	explosion_ = Mix_LoadWAV("music/explosion.wav");
 }

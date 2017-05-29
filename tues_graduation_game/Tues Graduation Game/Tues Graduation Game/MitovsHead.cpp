@@ -4,7 +4,7 @@
 #include "Months.h"
 #include <time.h>
 #include "MitovsAmmo.h" 
-
+#include "Animation.h"
 
 
 MitovsHead::MitovsHead(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObject) : GameObject("pictures/mitov2.png", screenSurface, window)
@@ -57,6 +57,16 @@ void MitovsHead::move()
 	{
 		rain_ammo();
 		lastTime_ = SDL_GetTicks();
+	}
+
+	if (health == 0)
+	{
+		setVisibility(false);
+		Animation *exp = new Animation(screenSurface_, window_, *gameObjects_, "pictures/explosion.png");
+		exp->SetFrameSize(120, 120);
+		exp->set_x(x_);
+		exp->set_y(y_);
+		animation = exp;
 	}
 }
 
@@ -125,17 +135,17 @@ void MitovsHead::fire()
 
 void MitovsHead::beatenMitov()
 {
-	if (health <= 99 && health >= 98)
+	if (health <= 75 && health > 50)
 	{
 		image_path_ = "pictures/beatenMitov1.png";
 		image_ = IMG_Load(image_path_);
 	}
-	else if (health < 98 && health >= 97)
+	else if (health <= 50 && health > 25)
 	{
 		image_path_ = "pictures/beatenMitov2.png";
 		image_ = IMG_Load(image_path_);
 	}
-	else if (health < 97 && health >= 96)
+	else if (health <= 25 && health > 0)
 	{
 		image_path_ = "pictures/beatenMitov3.png";
 		image_ = IMG_Load(image_path_);

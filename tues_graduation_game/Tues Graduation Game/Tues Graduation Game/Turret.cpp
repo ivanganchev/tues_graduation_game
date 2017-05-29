@@ -48,7 +48,7 @@ void Turret::fire()
 
 Turret::Turret(SDL_Surface * screenSurface, SDL_Window * window, vector <GameObject*> *gameObject) : GameObject("pictures/samolet.png", screenSurface, window)
 {
-	targets_ = { "EnemyAmmo" };
+	targets_ = { "EnemyAmmo", "MitovsAmmo" };
 	gameObjects_ = gameObject;
 	moveFlag_ = true;
 	endFlag_ = 0;

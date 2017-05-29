@@ -5,7 +5,7 @@
 #include <vector>
 #include <string.h>
 
-TougherEnemyAmmo::TougherEnemyAmmo(string name, SDL_Surface * screenSurface, SDL_Window * window, vector <GameObject*> *gameObject) : GameObject("pictures/red laser.png", screenSurface, window)
+TougherEnemyAmmo::TougherEnemyAmmo(string name, SDL_Surface * screenSurface, SDL_Window * window, vector <GameObject*> *gameObject) : GameObject("pictures/gotsev.png", screenSurface, window)
 {
 	targets_ = { "Turret" };
 	gameObject_ = gameObject;
@@ -16,23 +16,23 @@ TougherEnemyAmmo::TougherEnemyAmmo(string name, SDL_Surface * screenSurface, SDL
 void TougherEnemyAmmo::move()
 {
 	int h, w;
-	if (this->get_name() == "middle")
+	if (this->name_ == "middle")
 	{
 		y_ += 10;
 	}
-	else if (this->get_name() == "right")
+	else if (this->name_ == "right")
 	{
 		x_ += 7;
 		y_ += 7;
 	}
-	else if (this->get_name() == "left")
+	else if (this->name_ == "left")
 	{
 		x_ -= 7;
 		y_ += 7;
 	}
 
 	SDL_GetWindowSize(window_, &w, &h);
-	if (y_ > h)
+	if (y_ > h || x_ > w || x_ < 0)
 	{
 		isVisible_ = false;
 	}
@@ -40,5 +40,5 @@ void TougherEnemyAmmo::move()
 
 string TougherEnemyAmmo::get_name()
 {
-	return this->name_;
+	return "EnemyAmmo";
 }

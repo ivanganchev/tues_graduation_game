@@ -24,6 +24,7 @@ class Turret : public GameObject
 	int clipSize_;
 	int timer_ = 0;
 	Mix_Chunk *fire_;
+	int health_;
 
 protected:
 	SDL_Event keyEvent;
@@ -32,4 +33,5 @@ public:
 	Turret(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObject);
 
 	void move();
+	static bool gameOver;
 };

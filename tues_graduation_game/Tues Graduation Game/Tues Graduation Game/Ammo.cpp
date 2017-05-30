@@ -5,12 +5,13 @@
 #include <vector>
 #include "Headers/MitovsHead.h"
 #include "Headers/Animation.h"
-
+#include "Headers/MitovBeaten.h"
+#include "Headers/MitovBeaten.h"
 Ammo::Ammo(SDL_Surface * screenSurface, SDL_Window * window, vector <GameObject*> gameObject): GameObject("pictures/laserv2.png", screenSurface, window)
 {
 	
 	gameObjects_ = gameObject;
-	targets_ = { "EnemyAmmo", "BasicEnemy", "Mitov", "MitovsAmmo"};
+	targets_ = { "EnemyAmmo", "BasicEnemy", "Mitov", "TougherEnemy", "MitovsAmmo" };
 	moveFlag_ = true;
 	explosion_ = Mix_LoadWAV("music/explosion.wav");
 	mHit_ = Mix_LoadWAV("music/mitovhit.wav");
@@ -49,6 +50,8 @@ void Ammo::move()
 					}
 					else
 					{
+						//end_ = new MitovBeaten(screenSurface_, window_, &gameObjects_);
+						//gameObjects_.push_back(end_);
 						gameObjects_[i]->setVisibility(false);
 						setVisibility(false);
 						break;

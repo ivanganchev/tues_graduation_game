@@ -4,12 +4,10 @@
 #include <vector>
 #include <stdlib.h>
 #include <time.h>
-#include "Headers/EnemyAmmo.h"
-#include "Headers/EnemyAmmoGen.h"
+#include "Headers/TougherEnemyAmmo.h"
 
-TougherEnemy::TougherEnemy(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObjects) : GameObject("pictures/valkuplane.png", screenSurface, window)
+TougherEnemy::TougherEnemy(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObjects) : GameObject("pictures/valkuplane1.png", screenSurface, window)
 {
-	ammoGen_ = new TougherEnemyAmmoGen(screenSurface, window, gameObjects);
 	gameObjects_ = gameObjects;
 	moveFlag_ = true;
 	srand(time(NULL));
@@ -34,12 +32,20 @@ void TougherEnemy::move()
 	{
 		x_ += speedX;
 	}
-	GameObject *tempPointer = ammoGen_->get_object();
-
-	ammoGen_->add(1, 3);
-	if (tempPointer != ammoGen_->get_object()) {
-		ammoGen_->get_object()->set_x(x_ + 65);
-		ammoGen_->get_object()->set_y(y_ + 109);
+	if (SDL_GetTicks() % 50 == 0) 
+	{
+		GameObject* obj = new TougherEnemyAmmo("right", screenSurface_, window_, gameObjects_);
+		obj->set_x(x_ + 65);
+		obj->set_y(y_ + 109);
+		gameObjects_->push_back(obj);
+		GameObject *obj1 = new TougherEnemyAmmo("middle", screenSurface_, window_, gameObjects_);
+		obj1->set_x(x_ + 65);
+		obj1->set_y(y_ + 109);
+		gameObjects_->push_back(obj1);
+		GameObject *obj2 = new TougherEnemyAmmo("left", screenSurface_, window_, gameObjects_);
+		obj2->set_x(x_ + 65);
+		obj2->set_y(y_ + 109);
+		gameObjects_->push_back(obj2);
 	}
 
 	SDL_GetWindowSize(window_, &w, &h);
@@ -48,4 +54,9 @@ void TougherEnemy::move()
 		isVisible_ = false;
 	}
 
+}
+
+string TougherEnemy::get_name() 
+{
+	return "TougherEnemy";
 }

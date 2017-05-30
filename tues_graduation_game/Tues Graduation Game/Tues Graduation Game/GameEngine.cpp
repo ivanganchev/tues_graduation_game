@@ -71,10 +71,10 @@ int main()
 	spaceship.set_x(540);
 	spaceship.set_y(560);
 
-
+	GameEndingScreen end(screenSurface, window, &gameObjects);
 	BasicEnemyGen enemySpaceshipGen(screenSurface, window, &gameObjects);
 	MitovGenerator mitovGen(screenSurface, window, &gameObjects);
-	
+	TougherEnemyGen tougherSpaceshipGen(screenSurface, window, &gameObjects);
 
 	gameObjects.push_back(&background1);
 	gameObjects.push_back(&background2);
@@ -125,15 +125,16 @@ int main()
 				if (Months::month_select < 10)
 				{
 					enemySpaceshipGen.add(2, 5);
+					tougherSpaceshipGen.add(10, 20);
 					mitovGen.add(20, 50);
 					
 				}
 				else
 				{	
 					
-					if (find(gameObjects.begin(), gameObjects.end(), &mitovsHead) == gameObjects.end() && Months::month_select == 11)
+					if (find(gameObjects.begin(), gameObjects.end(), &mitovsHead) == gameObjects.end())
 					{
- 						gameObjects.push_back(&mitovsHead);
+   						gameObjects.push_back(&mitovsHead);
 					}
 					
 				}

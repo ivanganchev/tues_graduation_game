@@ -1,0 +1,14 @@
+﻿  Background.cpp
+  BasicEnemy.cpp
+  BasicEnemyGen.cpp
+  EnemyAmmoGen.cpp
+  Explosion.cpp
+  Months.cpp
+Months.cpp(21): warning C4018: '<=': signed/unsigned mismatch
+Months.cpp(19): warning C4101: 'current_time': unreferenced local variable
+  Generating code
+  5 of 409 functions ( 1.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    6 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Tues Graduation Game.vcxproj -> C:\Users\cecoi\Downloads\tues_graduation_game-master\tues_graduation_game-master\tues_graduation_game\Tues Graduation Game\x64\Release\Tues Graduation Game.exe

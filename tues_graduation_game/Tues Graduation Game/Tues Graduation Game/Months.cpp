@@ -6,62 +6,46 @@ using namespace std;
 
 
 
-Months::Months(SDL_Surface *screenSurface, SDL_Window *window) : TextClass(screenSurface, window), months_(vector <string>{"September", "October", "November", "December","January", "February", "March", "April", "May", "June", "July",})
-{
-	lastTime_ = SDL_GetTicks();
+Months::Months(SDL_Surface *screenSurface, SDL_Window *window) : TextClass(screenSurface, window), months(vector <string> {
+	"September", "October", "November", "December","January", "February", "March", "April", "May", "June", "July",
+}) {
+	this->lastTime = SDL_GetTicks();
 	accessed = 0;
 }
 
 
-void Months::show()
-{
+void Months::show() {
 
 	unsigned int seconds, current_time;
 	int interval = 10000;
-	if (lastTime_ + interval <= SDL_GetTicks())
-	{
+	if (this->lastTime + interval <= SDL_GetTicks()) {
 		month_select++;
-		if (month_select == 11 && accessed == 0)
-		{
-			endYear_ = true;
+		if (month_select == 11 && accessed == 0) {
+			this->endYear = true;
 			accessed = 1;
-
 		}
-		lastTime_ = SDL_GetTicks();
+		this->lastTime = SDL_GetTicks();
 	}
 
-	
-
-	
-	if (month_select < 11)
-	{
-		TextClass::set_text(months_[month_select]);
+	if (month_select < 11) {
+		TextClass::set_text(this->months[month_select]);
 		TextClass::show();
-	}
-	else
-	{
+	} else {
 		setVisibility(false);
 	}
-	
+
 	seconds = 0;
-
-
-
-
 }
 
-bool Months::isYearEnded() 
-{
-	return endYear_;
+bool Months::isYearEnded() {
+	return this->endYear;
 }
 
-void Months::setYear(bool val)
-{
-	endYear_ = val;
+void Months::setYear(bool val) {
+	this->endYear = val;
 }
 
-string Months::get_name()
-{
+string Months::get_name() {
 	return "Months";
 }
 

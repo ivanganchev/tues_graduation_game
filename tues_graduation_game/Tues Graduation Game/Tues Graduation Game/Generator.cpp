@@ -5,38 +5,32 @@
 #include <time.h>
 
 
-Generator::Generator(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObjects)
-{
+Generator::Generator(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObjects) {
 
-	gameObjects_ = gameObjects;
-	screenSurface_ = screenSurface;
-	window_ = window;
-	lastTime_ = SDL_GetTicks();
+	this->gameObjects = gameObjects;
+	this->screenSurface = screenSurface;
+	this->window = window;
+	this->lastTime = SDL_GetTicks();
 }
 
 Generator::Generator() {}
 
-GameObject* Generator::create_object()
-{
+GameObject* Generator::create_object() {
 	return NULL;
 }
 
-void Generator::add(int fromSec, int toSec)
-{
+void Generator::add(int fromSec, int toSec) {
 	int interval = (fromSec + rand() % (toSec - fromSec + 1)) * 1000;
-	if (lastTime_ + interval <= SDL_GetTicks()) 
-	{
+	if (this->lastTime + interval <= SDL_GetTicks()) {
 		GameObject* obj = create_object();
-		gameObjects_->push_back(obj);
-		lastTime_ = SDL_GetTicks();
-		lastObj_ = obj;
+		this->gameObjects->push_back(obj);
+		this->lastTime = SDL_GetTicks();
+		this->lastObj = obj;
 	}
-
 }
 
-GameObject* Generator::get_object()
-{
-	return lastObj_;
+GameObject* Generator::get_object() {
+	return this->lastObj;
 }
 
 

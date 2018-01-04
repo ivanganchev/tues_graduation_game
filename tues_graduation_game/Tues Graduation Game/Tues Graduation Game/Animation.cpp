@@ -1,66 +1,65 @@
-#include "Animation.h"
+#include "Headers/Animation.h"
 #include <SDL.h>
 
-Animation::Animation()
-{
+Animation::Animation() {
 
 }
-Animation::Animation(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> gameObjects, const char* image_path) : GameObject(image_path, screenSurface, window)
-{
-	CurrentFrame = 0;
-	MaxFrames = 0;
-	FrameInc = 1;
 
-	FrameRate = 70; 
-	OldTime = 0;
+Animation::Animation(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> gameObjects, const char* image_path) : GameObject(image_path, screenSurface, window) {
+	currentFrame = 0;
+	maxFrames = 0;
+	frameInc = 1;
 
-	Oscillate = false;
+	frameRate = 70;
+	oldTime = 0;
+
+	oscillate = false;
 	srcrect = new SDL_Rect();
 }
 
 void Animation::OnAnimate() {
-	if (CurrentFrame > MaxFrames) {
-		isVisible_ = true;
+	if (currentFrame > maxFrames) {
+		this->visibility = true;
 		return;
 	}
 
-	if (OldTime + FrameRate > SDL_GetTicks()) {
+	if (oldTime + frameRate > SDL_GetTicks()) {
 		return;
 	}
 
-	OldTime = SDL_GetTicks();
+	oldTime = SDL_GetTicks();
 
-	CurrentFrame += FrameInc;
+	currentFrame += frameInc;
 
-	srcrect->x = CurrentFrame * width_;
+	srcrect->x = currentFrame * this->width;
 	srcrect->y = 0;
-	srcrect->w = width_;
-	srcrect->h = height_;
-	
-
+	srcrect->w = this->width;
+	srcrect->h = this->height;
 }
 
 void Animation::SetFrameRate(int Rate) {
-	FrameRate = Rate;
+	frameRate = Rate;
 }
 
-void Animation::SetCurrentFrame(int Frame) {
-	if (Frame < 0 || Frame >= MaxFrames) return;
+void Animation::SetCurrentFrame(int frame) {
+	if (frame < 0 || frame >= maxFrames) {
+		return;
+	}
 
-	CurrentFrame = Frame;
+	currentFrame = frame;
 }
 
 int Animation::GetCurrentFrame() {
-	return CurrentFrame;
+	return currentFrame;
 }
-void Animation::SetFrameSize(int h, int w)
-{
-	height_ = h;
-	width_ = w;
-	MaxFrames = image_->w / w;
+
+void Animation::SetFrameSize(int h, int w) {
+	this->height = h;
+	this->width = w;
+	maxFrames = this->image->w / w;
 }
-void Animation::show()
-{
+
+void Animation::show() {
 	OnAnimate();
 	GameObject::show();
 }

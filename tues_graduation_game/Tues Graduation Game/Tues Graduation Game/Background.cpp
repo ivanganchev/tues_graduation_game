@@ -2,25 +2,14 @@
 #include "Headers/GameObject.h"
 #include "Headers/Background.h"
 
-Background::Background(SDL_Surface* screenSurface, SDL_Window* window) : GameObject("pictures/Background.jpg", screenSurface, window)
-{
-	
-	moveFlag_ = true;
-	
+Background::Background(SDL_Surface* screenSurface, SDL_Window* window) : GameObject("./pictures/Background.jpg", screenSurface, window) {
+	this->moveFlag = true;
 }
 
-
-
-void Background::move()
-{
-	
-	y_ += 3;
-	
-	if (y_ >= heightWindow_)
-	{
-		y_ = -heightWindow_;
-
+void Background::move() {
+	this->y += 3;
+	cout << "TUK SUM" << endl;
+	if (this->y >= this->heightWindow) {
+		this->y = -this->heightWindow;
 	}
-
-
 }

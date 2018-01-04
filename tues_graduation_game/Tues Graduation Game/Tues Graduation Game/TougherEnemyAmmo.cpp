@@ -1,44 +1,35 @@
-#include <SDL.h>
+#include <C:\Users\cecoi\Downloads\SDL2-devel-2.0.7-VC\SDL2-2.0.7\include\SDL.h>
 #include <SDL_image.h>
 #include "Headers/TougherEnemyAmmo.h"
 #include "Headers/GameObject.h"
 #include <vector>
 #include <string.h>
 
-TougherEnemyAmmo::TougherEnemyAmmo(string name, SDL_Surface * screenSurface, SDL_Window * window, vector <GameObject*> *gameObject) : GameObject("pictures/gotsev.png", screenSurface, window)
-{
-	targets_ = { "Turret" };
-	gameObject_ = gameObject;
-	moveFlag_ = true;
-	name_ = name;
+TougherEnemyAmmo::TougherEnemyAmmo(string name, SDL_Surface * screenSurface, SDL_Window * window, vector <GameObject*> *gameObject) : GameObject("pictures/gotsev.png", screenSurface, window) {
+	this->targets = { "Turret" };
+	this->gameObject = gameObject;
+	this->moveFlag = true;
+	this->name = name;
 }
 
-void TougherEnemyAmmo::move()
-{
+void TougherEnemyAmmo::move() {
 	int h, w;
-	if (this->name_ == "middle")
-	{
-		y_ += 10;
-	}
-	else if (this->name_ == "right")
-	{
-		x_ += 7;
-		y_ += 7;
-	}
-	else if (this->name_ == "left")
-	{
-		x_ -= 7;
-		y_ += 7;
+	if (this->name == "middle") {
+		this->y += 10;
+	} else if (this->name == "right") {
+		this->x += 7;
+		this->y += 7;
+	} else if (this->name == "left") {
+		this->x -= 7;
+		this->y += 7;
 	}
 
-	SDL_GetWindowSize(window_, &w, &h);
-	if (y_ > h || x_ > w || x_ < 0)
-	{
-		isVisible_ = false;
+	SDL_GetWindowSize(this->window, &w, &h);
+	if (this->y > h || this->x > w || this->x < 0) {
+		this->visibility = false;
 	}
 }
 
-string TougherEnemyAmmo::get_name()
-{
+string TougherEnemyAmmo::get_name() {
 	return "EnemyAmmo";
 }

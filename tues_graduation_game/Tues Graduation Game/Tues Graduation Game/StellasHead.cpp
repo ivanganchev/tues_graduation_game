@@ -3,19 +3,14 @@
 #include "Headers/StellasHead.h"
 #include "Headers/GameObject.h"
 
-StellasHead::StellasHead(SDL_Surface* screenSurface, SDL_Window* window) : GameObject("pictures/stelcheto.png", screenSurface, window)
-{
+StellasHead::StellasHead(SDL_Surface* screenSurface, SDL_Window* window) : GameObject("pictures/stelcheto.png", screenSurface, window) {
 	moveFlag_ = true;
 }
 
-void StellasHead::move()
-{
-	if(SDL_PollEvent(&keyEvent))
-	{
-		if (keyEvent.type == SDL_KEYDOWN) 
-		{
-			switch (keyEvent.key.keysym.sym)
-			{
+void StellasHead::move() {
+	if(SDL_PollEvent(&keyEvent)) {
+		if (keyEvent.type == SDL_KEYDOWN) {
+			switch (keyEvent.key.keysym.sym) {
 			case SDLK_w:
 				y_-=50;
 				break;
@@ -40,7 +35,6 @@ void StellasHead::move()
 
 
 
-StellasHead::~StellasHead()
-{
+StellasHead::~StellasHead() {
 }
 

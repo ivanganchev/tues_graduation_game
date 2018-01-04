@@ -2,9 +2,8 @@
 #include <SDL.h>
 #include "GameObject.h"
 
+class StellasHead: public GameObject {
 
-class StellasHead: public GameObject
-{
 protected:
 	SDL_Event keyEvent;
 

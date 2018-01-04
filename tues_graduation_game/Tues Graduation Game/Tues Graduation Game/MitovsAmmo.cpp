@@ -5,25 +5,21 @@
 #include <vector>
 
 
-MitovsAmmo::MitovsAmmo(SDL_Surface * screenSurface, SDL_Window * window, vector <GameObject*> *gameObject) : GameObject("pictures/mitovAmmo.png", screenSurface, window)
-{
-	targets_ = { "Turret" };
-	gameObject_ = gameObject;
-	moveFlag_ = true;
+MitovsAmmo::MitovsAmmo(SDL_Surface * screenSurface, SDL_Window * window, vector <GameObject*> *gameObject) : GameObject("pictures/mitovAmmo.png", screenSurface, window) {
+	this->targets = { "Turret" };
+	this->gameObject = gameObject;
+	this->moveFlag = true;
 }
 
-void MitovsAmmo::move()
-{
+void MitovsAmmo::move() {
 	int h, w;
-	y_ += 10;
-	SDL_GetWindowSize(window_, &w, &h);
-	if (y_ > h)
-	{
-		isVisible_ = false;
+	this->y += 10;
+	SDL_GetWindowSize(this->window, &w, &h);
+	if (this->y > h) {
+		this->visibility = false;
 	}
 }
 
-string MitovsAmmo::get_name()
-{
+string MitovsAmmo::get_name() {
 	return "MitovsAmmo";
 }

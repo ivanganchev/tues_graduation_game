@@ -1,20 +1,18 @@
-#include <SDL.h>
+#include <C:\Users\cecoi\Downloads\SDL2-devel-2.0.7-VC\SDL2-2.0.7\include\SDL.h>
 #include <vector>
-#include "MitovsAmmo.h"
-#include "MitovsAmmoGen.h"
-#include "Generator.h"
+#include "Headers/MitovsAmmo.h"
+#include "Headers/MitovsAmmoGen.h"
+#include "Headers/Generator.h"
 
 
-MitovsAmmoGen::MitovsAmmoGen(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObject) : Generator(screenSurface, window, gameObject)
-{
+MitovsAmmoGen::MitovsAmmoGen(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObject) : Generator(screenSurface, window, gameObject) {
 
-	gameObject_ = gameObject;
+	this->gameObject = gameObject;
 }
 
 
-GameObject* MitovsAmmoGen::create_object()
-{
-	ammo_ = new MitovsAmmo(screenSurface_, window_, gameObject_);
-	return ammo_;
+GameObject* MitovsAmmoGen::create_object() {
+	this->ammo = new MitovsAmmo(this->screenSurface, this->window, this->gameObject);
+	return this->ammo;
 
 }

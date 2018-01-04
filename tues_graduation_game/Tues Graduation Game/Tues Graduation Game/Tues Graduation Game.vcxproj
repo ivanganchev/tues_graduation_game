@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -21,32 +21,32 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{33186954-28DB-48C8-A39A-AB24A60638A7}</ProjectGuid>
     <RootNamespace>TuesGraduationGame</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -69,19 +69,31 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>E:\SDL2_mixer-devel-2.0.1-VC\SDL2_mixer-2.0.1\include;E:\ttf\SDL2_ttf-2.0.14\include;E:\SDL2\sdl_image\include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\SDL2_mixer-devel-2.0.1-VC\SDL2_mixer-2.0.1\lib\x86;E:\ttf\SDL2_ttf-2.0.14\include;E:\SDL2\sdl_image\include;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\SDL_Image_Extension\SDL2_image-2.0.1\include;E:\ttf\SDL2_ttf-2.0.14\include;C:\Users\cecoi\Downloads\SDL2_mixer-devel-2.0.2-VC\SDL2_mixer-2.0.2\include;C:\Users\cecoi\Downloads\SDL2-devel-2.0.7-VC\SDL2-2.0.7\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\cecoi\Downloads\SDL2-devel-2.0.7-VC\SDL2-2.0.7\lib\x86;E:\ttf\SDL2_ttf-2.0.14\lib\x86;E:\SDL_Image_Extension\SDL2_image-2.0.1\lib\x86;C:\Users\cecoi\Downloads\SDL2_mixer-devel-2.0.2-VC\SDL2_mixer-2.0.2\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LibraryPath>C:\Users\cecoi\Downloads\SDL2_mixer-devel-2.0.2-VC\SDL2_mixer-2.0.2\lib\x64;E:\SDL_Image_Extension\SDL2_image-2.0.1\lib\x64;E:\ttf\SDL2_ttf-2.0.14\lib\x64;C:\Users\cecoi\Downloads\SDL2-devel-2.0.7-VC\SDL2-2.0.7\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\SDL_Image_Extension\SDL2_image-2.0.1\include;E:\ttf\SDL2_ttf-2.0.14\include;C:\Users\cecoi\Downloads\SDL2-devel-2.0.7-VC\SDL2-2.0.7\include;C:\Users\cecoi\Downloads\SDL2_mixer-devel-2.0.2-VC\SDL2_mixer-2.0.2\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>E:\ttf\SDL2_ttf-2.0.14\include;E:\SDL_Image_Extension\SDL2_image-2.0.1\include;C:\Users\cecoi\Downloads\SDL2_mixer-devel-2.0.2-VC\SDL2_mixer-2.0.2\include;C:\Users\cecoi\Downloads\SDL2-devel-2.0.7-VC\SDL2-2.0.7\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\SDL_Image_Extension\SDL2_image-2.0.1\lib\x64;E:\ttf\SDL2_ttf-2.0.14\lib\x64;C:\Users\cecoi\Downloads\SDL2_mixer-devel-2.0.2-VC\SDL2_mixer-2.0.2\lib\x64;C:\Users\cecoi\Downloads\SDL2-devel-2.0.7-VC\SDL2-2.0.7\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>E:\ttf\SDL2_ttf-2.0.14\include;E:\SDL_Image_Extension\SDL2_image-2.0.1\include;C:\Users\cecoi\Downloads\SDL2-devel-2.0.7-VC\SDL2-2.0.7\include;C:\Users\cecoi\Downloads\SDL2_mixer-devel-2.0.2-VC\SDL2_mixer-2.0.2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\ttf\SDL2_ttf-2.0.14\lib\x86;E:\SDL_Image_Extension\SDL2_image-2.0.1\lib\x86;C:\Users\cecoi\Downloads\SDL2-devel-2.0.7-VC\SDL2-2.0.7\lib\x86;C:\Users\cecoi\Downloads\SDL2_mixer-devel-2.0.2-VC\SDL2_mixer-2.0.2\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>E:\SDL2\include;Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\SDL_Image_Extension\SDL2_image-2.0.1\include;E:\ttf\SDL2_ttf-2.0.14\include;C:\Users\cecoi\Downloads\SDL2_mixer-devel-2.0.2-VC\SDL2_mixer-2.0.2\include;C:\Users\cecoi\Downloads\SDL2-devel-2.0.7-VC\SDL2-2.0.7\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>E:\SDL2_mixer-devel-2.0.1-VC\SDL2_mixer-2.0.1\lib\x86;E:\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2_mixer.lib;E:\ttf\SDL2_ttf-2.0.14\lib\x86\SDL2_ttf.lib;SDL2_image.lib;SDL2main.lib;SDL2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>E:\ttf\SDL2_ttf-2.0.14\lib\x86;C:\Users\cecoi\Downloads\SDL2_mixer-devel-2.0.2-VC\SDL2_mixer-2.0.2\lib\x86;C:\Users\cecoi\Downloads\SDL2-devel-2.0.7-VC\SDL2-2.0.7\lib\x86;E:\SDL_Image_Extension\SDL2_image-2.0.1\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2_mixer.lib;SDL2_ttf.lib;SDL2_image.lib;SDL2.lib;SDL2main.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -90,11 +102,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>E:\ttf\SDL2_ttf-2.0.14\include;E:\SDL2\sdl_image\include;E:\SDL-devel\SDL2-2.0.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\ttf\SDL2_ttf-2.0.14\include;E:\SDL2\sdl_image\include;E:\SDL-devel\SDL2-2.0.5\include;C:\Users\cecoi\Downloads\SDL2_mixer-devel-2.0.2-VC\SDL2_mixer-2.0.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>E:\ttf\SDL2_ttf-2.0.14\lib\x86;E:\SDL2\sdl_image\lib\x86;E:\SDL-devel\SDL2-2.0.5\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2main.lib;SDL2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>E:\ttf\SDL2_ttf-2.0.14\lib\x64;E:\SDL_Image_Extension\SDL2_image-2.0.1\lib\x64;C:\Users\cecoi\Downloads\SDL2_mixer-devel-2.0.2-VC\SDL2_mixer-2.0.2\lib\x64;C:\Users\cecoi\Downloads\SDL2-devel-2.0.7-VC\SDL2-2.0.7\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2_mixer.lib;SDL2main.lib;SDL2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -104,10 +116,13 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>E:\SDL_Image_Extension\SDL2_image-2.0.1\include;E:\ttf\SDL2_ttf-2.0.14\include;C:\Users\cecoi\Downloads\SDL2_mixer-devel-2.0.2-VC\SDL2_mixer-2.0.2\include;C:\Users\cecoi\Downloads\SDL2-devel-2.0.7-VC\SDL2-2.0.7\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>E:\ttf\SDL2_ttf-2.0.14\lib\x86;E:\SDL_Image_Extension\SDL2_image-2.0.1\lib\x86;C:\Users\cecoi\Downloads\SDL2_mixer-devel-2.0.2-VC\SDL2_mixer-2.0.2\lib\x86;C:\Users\cecoi\Downloads\SDL2-devel-2.0.7-VC\SDL2-2.0.7\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2_mixer.dll;SDL2_image.dll;SDL2_ttf.dll;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -117,10 +132,13 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>E:\ttf\SDL2_ttf-2.0.14\include;E:\SDL_Image_Extension\SDL2_image-2.0.1\include;C:\Users\cecoi\Downloads\SDL2-devel-2.0.7-VC\SDL2-2.0.7\include;C:\Users\cecoi\Downloads\SDL2_mixer-devel-2.0.2-VC\SDL2_mixer-2.0.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>E:\SDL_Image_Extension\SDL2_image-2.0.1\lib\x64;E:\ttf\SDL2_ttf-2.0.14\lib\x64;C:\Users\cecoi\Downloads\SDL2_mixer-devel-2.0.2-VC\SDL2_mixer-2.0.2\lib\x64;C:\Users\cecoi\Downloads\SDL2-devel-2.0.7-VC\SDL2-2.0.7\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_ttf.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -135,12 +153,18 @@
     <ClCompile Include="EnemyAmmo.cpp" />
     <ClCompile Include="Explosion.cpp" />
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="MitovsAmmo.cpp" />
     <ClCompile Include="MitovsAmmoGen.cpp" />
     <ClCompile Include="MitovsHead.cpp" />
     <ClCompile Include="Months.cpp" />
     <ClCompile Include="GameEndingScreen.cpp" />
     <ClCompile Include="MitovGenerator.cpp" />
+    <ClCompile Include="Scenes\LevelOne.cpp" />
+    <ClCompile Include="TougherEnemy.cpp" />
+    <ClCompile Include="TougherEnemyAmmo.cpp" />
+    <ClCompile Include="TougherEnemyAmmoGen.cpp" />
+    <ClCompile Include="TougherEnemyGen.cpp" />
     <ClCompile Include="Turret.cpp" />
     <ClCompile Include="TextClass.cpp" />
   </ItemGroup>
@@ -172,9 +196,15 @@
     <ClInclude Include="Headers\MitovsAmmoGen.h" />
     <ClInclude Include="Headers\MitovsHead.h" />
     <ClInclude Include="Headers\Months.h" />
+    <ClInclude Include="Headers\Scene.h" />
     <ClInclude Include="Headers\StellasHead.h" />
     <ClInclude Include="Headers\TextClass.h" />
+    <ClInclude Include="Headers\TougherEnemy.h" />
+    <ClInclude Include="Headers\TougherEnemyAmmo.h" />
+    <ClInclude Include="Headers\TougherEnemyAmmoGen.h" />
+    <ClInclude Include="Headers\TougherEnemyGen.h" />
     <ClInclude Include="Headers\Turret.h" />
+    <ClInclude Include="Scenes\LevelOne.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

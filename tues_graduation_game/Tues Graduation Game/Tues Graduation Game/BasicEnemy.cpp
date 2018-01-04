@@ -8,59 +8,43 @@
 #include "Headers/Generator.h"
 #include "Headers/EnemyAmmoGen.h"
 
-BasicEnemy::BasicEnemy(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObjects) : GameObject("pictures/basicenemyplanev1.png", screenSurface, window)
-{
-
-	ammoGen_ = new EnemyAmmoGen(screenSurface, window, gameObjects);
-	gameObjects_ = gameObjects;
-	moveFlag_ = true;
-	srand(time(NULL));
+BasicEnemy::BasicEnemy(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObjects) : GameObject("pictures/basicenemyplanev1.png", screenSurface, window) {
+	this->ammoGen = new EnemyAmmoGen(screenSurface, window, gameObjects);
+	this->gameObjects = gameObjects;
+	this->moveFlag = true;
 	limit = rand() % 100 + 1;
 	speedY = rand() % 20 + 2;
 	speedX = rand() % 20 + 2;
-	if (speedX % 2 == 0)
-	{
+	if (speedX % 2 == 0) {
 		speedX = -speedX;
 	}
-
 }
 
-void BasicEnemy::fire()
-{
+void BasicEnemy::fire() {
 	int h, w;
-	GameObject *tempPointer = ammoGen_->get_object();
+	GameObject *tempPointer = this->ammoGen->get_object();
 
-	ammoGen_->add(1, 3);
-	if (tempPointer != ammoGen_->get_object()) {
-		ammoGen_->get_object()->set_x(x_ + 65);
-		ammoGen_->get_object()->set_y(y_ + 109);
+	this->ammoGen->add(1, 3);
+	if (tempPointer != this->ammoGen->get_object()) {
+		this->ammoGen->get_object()->set_x(this->x + 65);
+		this->ammoGen->get_object()->set_y(this->y + 109);
 	}
-	SDL_GetWindowSize(window_, &w, &h);
-	if (x_ > w || x_ < -120)
-	{
-		isVisible_ = false;
+	SDL_GetWindowSize(this->window, &w, &h);
+	if (this->x > w || this->x < -120) {
+		this->visibility = false;
 	}
 }
 
-
-void BasicEnemy::move()
-{
-	if (y_ < limit)
-	{
-		y_ += speedY;
-	}
-	else
-	{
-		x_ += speedX;
+void BasicEnemy::move() {
+	if (this->y < limit) {
+		this->y += speedY;
+	} else {
+		this->x += speedX;
 	}
 
 	fire();
-
 }
 
-
-
-string BasicEnemy::get_name()
-{
+string BasicEnemy::get_name() {
 	return "BasicEnemy";
 }

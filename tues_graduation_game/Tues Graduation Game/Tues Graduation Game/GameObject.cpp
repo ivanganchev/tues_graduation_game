@@ -7,112 +7,100 @@
 
 using namespace std;
 
-GameObject::GameObject()
-{
+GameObject::GameObject() {
 
 }
 
-GameObject::GameObject(const char* image_path, SDL_Surface* screenSurface, SDL_Window* window)
-{
+GameObject::GameObject(const char* image_path, SDL_Surface* screenSurface, SDL_Window* window) {
+	if (screenSurface == NULL)
+		cout << "Error: " << SDL_GetError() << endl;
 	init(screenSurface, window);
 
-	image_path_ = image_path;
-	SDL_GetWindowSize(window, &witdhWindow_, &heightWindow_);
+	this->image_path = image_path;
+	SDL_GetWindowSize(window, &witdhWindow, &heightWindow);
 	int imgType = IMG_INIT_JPG | IMG_INIT_PNG;
-	if (!(IMG_Init(imgType) & imgType))
-	{
+	if (!(IMG_Init(imgType) & imgType)) {
 		printf("SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError());
 	}
 
-	image_ = IMG_Load(image_path_);
-	if (image_ == NULL)
-	{
-		printf("Unable to load image %s! SDL_image Error: %s\n", image_path_, IMG_GetError());
+	image = IMG_Load(this->image_path);
+
+	if (this->image == NULL) {
+		printf("Unable to load image %s! SDL_image Error: %s\n", this->image_path, IMG_GetError());
 	}
-
-
 }
 
 
-GameObject::GameObject(SDL_Surface* screenSurface, SDL_Window* window)
-{
+GameObject::GameObject(SDL_Surface* screenSurface, SDL_Window* window) {
 	init(screenSurface, window);
 }
 
-void GameObject::init(SDL_Surface* screenSurface, SDL_Window* window)
-{
+void GameObject::init(SDL_Surface* screenSurface, SDL_Window* window) {
 
-	isVisible_ = true;
-	witdhWindow_ = 0;
-	heightWindow_ = 0;
-	x_ = 0;
-	y_ = 0;
-	window_ = window;
-	screenSurface_ = screenSurface;
+	visibility = true;
+	witdhWindow = 0;
+	heightWindow = 0;
+	x = 0;
+	y = 0;
+	this->window = window;
+	this->screenSurface = screenSurface;
 	srcrect = NULL;
 	animation = NULL;
 }
 
-void GameObject::show()
-{
+void GameObject::show() {
+	SDL_Rect dstrect = { this->x, this->y, 0, 0 };
 
-	SDL_Rect dstrect = { x_, y_, 0, 0 };
-	SDL_BlitSurface(image_, srcrect, screenSurface_, &dstrect);
+	int res = SDL_BlitSurface(this->image, srcrect, this->screenSurface, &dstrect);
+	if (res == -1) {
+		cout << "Could not get surface: %s\n" << SDL_GetError() << endl;
+	}
+	
+	
 }
 
-void GameObject::set_y(int y)
-{
-	y_ = y;
+void GameObject::set_y(int y) {
+	this->y = y;
 }
 
-void GameObject::set_x(int x)
-{
-	x_ = x;
+void GameObject::set_x(int x) {
+	this->x = x;
 }
 
-int GameObject::get_x()
-{
-	return x_;
+int GameObject::get_x() {
+	return this->x;
 }
 
-int GameObject::get_y()
-{
-	return y_;
+int GameObject::get_y() {
+	return this->y;
 }
 
-void GameObject::move()
-{
-
+void GameObject::move() {
+	cout << "HERE" << endl;
 
 }
 
-bool GameObject::isMovable()
-{
-	return moveFlag_;
+bool GameObject::isMovable() {
+	return this->moveFlag;
 }
 
-bool GameObject::isVisible()
-{
-	return isVisible_;
+bool GameObject::isVisible() {
+	return this->visibility;
 }
 
 
-string GameObject::get_name()
-{
+string GameObject::get_name() {
 	return "";
 }
 
-SDL_Surface* GameObject::get_image()
-{
-	return image_;
+SDL_Surface* GameObject::get_image() {
+	return this->image;
 }
 
-void GameObject::setVisibility(bool visibility)
-{
-	isVisible_ = visibility;
+void GameObject::setVisibility(bool visibility) {
+	this->visibility = visibility;
 }
 
-GameObject* GameObject::getAnimation()
-{
+GameObject* GameObject::getAnimation() {
 	return animation;
 }

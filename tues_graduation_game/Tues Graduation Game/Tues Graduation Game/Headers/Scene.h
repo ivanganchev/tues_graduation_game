@@ -15,7 +15,7 @@ protected:
 	const char *bossFightMusic;
 
 public:
-	Scene *getNextScene();
+	virtual Scene *getNextScene();
 	Scene(SDL_Surface *screenSurface, SDL_Window *window);
 	void execute();
 	virtual void executeExtension();
@@ -23,4 +23,5 @@ public:
 	void playMusic();
 	void stopMusic();
 	void changeMusic();
+	virtual bool quitGame();
 };

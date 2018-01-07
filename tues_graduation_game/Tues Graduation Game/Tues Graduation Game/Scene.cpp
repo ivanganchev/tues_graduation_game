@@ -76,3 +76,8 @@ void Scene::stopMusic() {
 
 void Scene::changeMusic() {
 }
+
+bool Scene::quitGame()
+{
+	return false;
+}

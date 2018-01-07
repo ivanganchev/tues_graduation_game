@@ -23,6 +23,7 @@
 #include "Headers/Animation.h"
 #include "Scenes/LevelOne.h"
 #include "Headers/Scene.h"
+#include "Scenes/StartGameScene.h"
 //#include "Headers/BonusesGenerator.h"
 //#include "Headers/Bonus.h"
 #include <cstdio>
@@ -60,33 +61,32 @@ int main() {
 		return 1;
 	}
 
+	 
+	Scene * currentScene = new StartGameScene(screenSurface, window, new LevelOne(screenSurface, window, NULL, NULL));
 
-	Scene * currentScene = new LevelOne(screenSurface, window, NULL, NULL);
-	currentScene->playMusic();
+	//currentScene->playMusic();
+ 
 	bool quit = false;
 	while (quit == false) {
 		currentScene->execute();
-
+		quit = currentScene->quitGame();
 		SDL_Event event;
-		while (SDL_PollEvent(&event) != 0) {
+		while(SDL_PollEvent(&event) != 0) {
 			if (event.type == SDL_QUIT) {
 				quit = true;
 			}
 		}
 
 
-
-
-
+		if (currentScene->getNextScene() != NULL) {
+			currentScene = currentScene->getNextScene();
+		}
 
 		SDL_UpdateWindowSurface(window);
 		SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
 		SDL_Delay(1000 / FRAMES_PER_SECOND);
 	}
 
-	while (quit == false) {
-
-	}
-
 	return 0;
 }
+  

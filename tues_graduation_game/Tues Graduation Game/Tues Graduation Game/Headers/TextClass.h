@@ -60,6 +60,9 @@ public:
 	**/
 
 	void show();
+	void setFont(string font, int size);
+	void setColor(Uint8 r, Uint8 g, Uint8 b);
+	void getSize(int *w, int *h);
 
 	/**
 	Fn: void TextClass::set_text(string text);

@@ -20,7 +20,7 @@
 #include "../Headers/MitovsAmmoGen.h"
 #include "../Headers/Animation.h"
 #include "../Scenes/LevelOne.h"
-#include "../Headers/Scene.h"
+
 class LevelOne : public Scene {
 	BasicEnemyGen *enemySpaceshipGen;
 	MitovGenerator *mitovGen;
@@ -30,7 +30,6 @@ class LevelOne : public Scene {
 
 public:
 	LevelOne(SDL_Surface *screenSurface, SDL_Window *window,  Scene *success, Scene* failure);
-
 protected:
 	virtual void executeExtension(int i);
 

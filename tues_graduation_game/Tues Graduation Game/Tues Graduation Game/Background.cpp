@@ -8,7 +8,6 @@ Background::Background(SDL_Surface* screenSurface, SDL_Window* window) : GameObj
 
 void Background::move() {
 	this->y += 3;
-	cout << "TUK SUM" << endl;
 	if (this->y >= this->heightWindow) {
 		this->y = -this->heightWindow;
 	}

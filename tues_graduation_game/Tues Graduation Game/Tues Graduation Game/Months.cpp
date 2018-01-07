@@ -29,6 +29,7 @@ void Months::show() {
 
 	if (month_select < 11) {
 		TextClass::set_text(this->months[month_select]);
+		this->setFont("fonts/ka1.ttf", 24);
 		TextClass::show();
 	} else {
 		setVisibility(false);

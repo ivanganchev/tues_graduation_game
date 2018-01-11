@@ -12,6 +12,6 @@ public:
 	StartGameScene(SDL_Surface *screenSurface, SDL_Window *window, Scene *success);
 
 	bool quitGame();
-
+	virtual Scene *getNextScene();
 };
 

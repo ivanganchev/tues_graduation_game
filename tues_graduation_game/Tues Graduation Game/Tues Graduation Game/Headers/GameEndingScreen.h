@@ -15,6 +15,9 @@ Author:Ivan Ganchev
 
 class GameEndingScreen : public GameObject {
 
+
+
+
 public:
 
 	/**
@@ -31,6 +34,6 @@ public:
 	gameObject -     [in,out] If non-null, the game object.
 	**/
 
-	GameEndingScreen(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObject);
+	GameEndingScreen(SDL_Surface* screenSurface, SDL_Window* window, const char* image_path);
 
 };

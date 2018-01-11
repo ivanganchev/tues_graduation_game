@@ -75,12 +75,12 @@ class Turret : public GameObject {
 	/** The fire sound . */
 	Mix_Chunk *fireSound;
 
-	/** The health. */
-	int health;
+	
 
 protected:
 	/** The key event. */
 	SDL_Event keyEvent;
+	
 
 public:
 
@@ -111,6 +111,10 @@ public:
 	**/
 	void move();
 
+	/** The health. */
+	static int health;
+
 	/** True to game over. */
 	static bool gameOver;
+	
 };

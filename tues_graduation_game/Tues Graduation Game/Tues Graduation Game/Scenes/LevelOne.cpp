@@ -47,7 +47,6 @@ LevelOne::LevelOne(SDL_Surface *screenSurface, SDL_Window *window, Scene *succes
 	spaceship->set_x(540);
 	spaceship->set_y(560);
 
-	//GameEndingScreen end(this->screenSurface, this->window, gameObjects);
 	this->enemySpaceshipGen = new BasicEnemyGen(this->screenSurface, this->window, gameObjects);
 	this->mitovGen = new MitovGenerator(this->screenSurface, this->window, gameObjects);
 	this->tougherSpaceshipGen = new TougherEnemyGen(this->screenSurface, this->window, gameObjects);
@@ -93,3 +92,11 @@ void LevelOne::executeExtension(int i)  {
 
 
 
+Scene * LevelOne::getNextScene() {
+	if (Turret::health <= 0) {
+		return failure;
+	} else if (MitovsHead::health <= 0) {
+		return success;
+	}
+	return nullptr;
+}

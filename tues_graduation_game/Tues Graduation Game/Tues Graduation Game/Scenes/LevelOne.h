@@ -19,7 +19,8 @@
 #include "../Headers/MitovsAmmo.h"
 #include "../Headers/MitovsAmmoGen.h"
 #include "../Headers/Animation.h"
-#include "../Scenes/LevelOne.h"
+#include "LevelOne.h"
+#include "FinalScene.h"
 
 class LevelOne : public Scene {
 	BasicEnemyGen *enemySpaceshipGen;
@@ -27,9 +28,11 @@ class LevelOne : public Scene {
 	TougherEnemyGen *tougherSpaceshipGen;
 	MitovsHead * mitovsHead;
 	Months *months;
+	FinalScene *finalScene;
 
 public:
 	LevelOne(SDL_Surface *screenSurface, SDL_Window *window,  Scene *success, Scene* failure);
+	virtual Scene *getNextScene();
 protected:
 	virtual void executeExtension(int i);
 

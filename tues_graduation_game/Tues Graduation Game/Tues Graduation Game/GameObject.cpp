@@ -76,7 +76,7 @@ int GameObject::get_y() {
 }
 
 void GameObject::move() {
-	cout << "HERE" << endl;
+	
 
 }
 

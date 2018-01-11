@@ -60,9 +60,11 @@ int main() {
 		cout << "Error: " << SDL_GetError() << endl;
 		return 1;
 	}
-
-	 
-	Scene * currentScene = new StartGameScene(screenSurface, window, new LevelOne(screenSurface, window, NULL, NULL));
+ 
+	Scene * currentScene = new StartGameScene(screenSurface, window, 
+		new LevelOne(screenSurface, window, 
+			new FinalScene(screenSurface, window, "pictures/successBackground.png"), 
+			new FinalScene(screenSurface, window, "pictures/gameendingscreen.png")));
 
 	//currentScene->playMusic();
  
@@ -77,9 +79,9 @@ int main() {
 			}
 		}
 
-
-		if (currentScene->getNextScene() != NULL) {
-			currentScene = currentScene->getNextScene();
+		Scene *nextScene = currentScene->getNextScene();
+		if (nextScene != NULL) {
+			currentScene = nextScene;
 		}
 
 		SDL_UpdateWindowSurface(window);

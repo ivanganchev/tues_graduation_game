@@ -24,4 +24,5 @@ public:
 	void stopMusic();
 	void changeMusic();
 	virtual bool quitGame();
+
 };

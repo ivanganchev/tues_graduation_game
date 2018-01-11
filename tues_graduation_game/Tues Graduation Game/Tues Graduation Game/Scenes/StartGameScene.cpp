@@ -21,7 +21,7 @@ StartGameScene::StartGameScene(SDL_Surface *screenSurface, SDL_Window *window, S
 	this->endGameButton = new Button(this->screenSurface, this->window);
 	this->endGameButton->setButtonText("End Game");
 	this->endGameButton->set_x(300);
-	this->endGameButton->set_y(400);
+	this->endGameButton->set_y(600);
 
 	Background * background1 = new Background(this->screenSurface, this->window);
 	background1->set_y(0);
@@ -45,3 +45,13 @@ bool StartGameScene::quitGame()
 {
 	return this->endGameButton->isClicked();
 }
+
+Scene * StartGameScene::getNextScene()
+{
+	if (this->startGameButton->isClicked() == true) {
+		this->startGameButton->clearButtonState();
+		return this->success;
+	}
+	return nullptr;
+}
+

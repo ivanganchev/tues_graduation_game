@@ -23,15 +23,15 @@ void Button::show() {
 			mouseX = event.button.x;
 			mouseY = event.button.y;
 			
-			if ((mouseX > this->x) && (mouseX < this->x + this->image->w) && (mouseY > this->y) && (mouseY < this->y + this->image->h)) {
+			if ((mouseX > this->x) && (mouseX < (this->x + this->image->w)) && (mouseY > this->y) && (mouseY < (this->y + this->image->h))) {
 					if (event.button.state == SDL_PRESSED) {
 						this->image_path = "pictures/clickedButton.png";
 						this->image = IMG_Load(this->image_path);
-						this->clicked = true;
-					}
-					else if (event.button.state == SDL_RELEASED) {
+						
+					} else if (event.button.state == SDL_RELEASED) {
 						this->image_path = "pictures/button.png";
 						this->image = IMG_Load(this->image_path);
+						this->clicked = true;
 						
 					}
 			}

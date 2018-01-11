@@ -37,14 +37,15 @@ void Turret::fire() {
 }
 
 Turret::Turret(SDL_Surface * screenSurface, SDL_Window * window, vector <GameObject*> *gameObject) : GameObject("pictures/samolet.png", screenSurface, window) {
-	this->targets = { "EnemyAmmo", "MitovsAmmo",  "TripleAmmo"};
+	this->targets = { "EnemyAmmo", "MitovsAmmo",  "TripleAmmo" };
 	this->gameObjects = gameObject;
 	this->moveFlag = true;
 	this->endFlag = 0;
 	this->clipSize = 15;
 	this->fireSound = Mix_LoadWAV("music/laser.wav");
-	this->health= 5;
 }
+
+int Turret::health = 5;
 
 
 void Turret::move() {
@@ -102,27 +103,30 @@ void Turret::move() {
 					}
 				}*/
 
-				if (this->health > 0) {
-					//this->health--;
-					//(*gameObjects)[i]->setVisibility(false);
+				if (health > 0) {
+					health--;
+					(*gameObjects)[i]->setVisibility(false);
 				} else {
 
 					(*gameObjects)[i]->setVisibility(false);
 					setVisibility(false);
 					this->endFlag = 1;
 					break;
+					 
 				}
 
 			}
 		}
 	}
 
-	if (this->endFlag == 1) {
+	/*if (this->endFlag == 1) {
 		this->end = new GameEndingScreen(this->screenSurface, this->window, this->gameObjects);
 		(*gameObjects).push_back(this->end);
-	}
+	}*/
 
 }
+
+
 
 
 

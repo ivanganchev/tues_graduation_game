@@ -34,13 +34,13 @@ void MitovsHead::move() {
 		if (x >= (w-1)-image->w) {
 			for (int c = 0; c < 4; c++) {
 				a[c] = rand() % 100;
-				b[c] = rand() % 100;
+				//b[c] = rand() % 100;
 			}
 			direction = -1;
 		} else if(x <= 0) {
 			for (int c = 0; c < 4; c++) {
 				a[c] = rand() % 100;
-				b[c] = rand() % 100;
+				//b[c] = rand() % 100;
 			}
 			direction = 1;
 		}

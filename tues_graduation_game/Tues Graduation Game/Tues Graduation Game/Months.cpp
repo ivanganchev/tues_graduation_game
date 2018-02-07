@@ -22,7 +22,7 @@ void Months::show() {
 		month_select++;
 		if (month_select == 11 && accessed == 0) {
 			this->endYear = true;
-			accessed = 1;
+			accessed = 1; 
 		}
 		this->lastTime = SDL_GetTicks();
 	}

@@ -23,6 +23,7 @@ public:
 	void playMusic();
 	void stopMusic();
 	void changeMusic();
+	virtual const char * getSceneName();
 	virtual bool quitGame();
 
 };

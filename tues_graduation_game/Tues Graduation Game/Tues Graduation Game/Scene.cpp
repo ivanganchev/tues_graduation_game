@@ -9,13 +9,11 @@ Scene::Scene(SDL_Surface *screenSurface, SDL_Window *window)
 	this->musicFileName = nullptr;
 }
 
-Scene * Scene::getNextScene()
-{
+Scene * Scene::getNextScene() {
 	return nullptr;
 }
 
-void Scene::execute()
-{	
+void Scene::execute() {	
 	for (int i = 0; i < this->gameObjects->size(); i++) {
 		if ((*(this->gameObjects))[i]->isMovable() == true) {
 			(*this->gameObjects)[i]->move();
@@ -24,18 +22,10 @@ void Scene::execute()
 			gameObjects->push_back((*this->gameObjects)[i]->getAnimation());
 		}
 
-		/*if (this->gameObjects[i]->getAnimation() != NULL) {
-			this->gameObjects.push_back(this->gameObjects[i]->getAnimation());
-		}*/
-
-	
-
 		(*this->gameObjects)[i]->show();
 		this->executeExtension(i);
 
 	}
-
-	
 
 	while (true) {
 		int index = -1;
@@ -77,7 +67,11 @@ void Scene::stopMusic() {
 void Scene::changeMusic() {
 }
 
-bool Scene::quitGame()
+const char *Scene::getSceneName()
 {
+	return NULL;
+}
+
+bool Scene::quitGame() {
 	return false;
 }

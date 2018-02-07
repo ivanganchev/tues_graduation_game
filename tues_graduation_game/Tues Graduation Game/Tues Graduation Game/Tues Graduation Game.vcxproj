@@ -144,6 +144,11 @@
   <ItemGroup>
     <ClCompile Include="Ammo.cpp" />
     <ClCompile Include="EnemyAmmoGen.cpp" />
+    <ClCompile Include="EscapeBackground.cpp" />
+    <ClCompile Include="EventManager.cpp" />
+    <ClCompile Include="Scenes\EscapeScene.cpp" />
+    <ClCompile Include="GameEndingScreen.cpp" />
+    <ClCompile Include="Scenes\FinalScene.cpp" />
     <ClCompile Include="GameEngine.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Background.cpp" />
@@ -153,14 +158,15 @@
     <ClCompile Include="EnemyAmmo.cpp" />
     <ClCompile Include="Explosion.cpp" />
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="MitovsAmmo.cpp" />
     <ClCompile Include="MitovsAmmoGen.cpp" />
     <ClCompile Include="MitovsHead.cpp" />
     <ClCompile Include="Months.cpp" />
-    <ClCompile Include="GameEndingScreen.cpp" />
     <ClCompile Include="MitovGenerator.cpp" />
     <ClCompile Include="Scenes\LevelOne.cpp" />
+    <ClCompile Include="Scenes\StartGameScene.cpp" />
     <ClCompile Include="TougherEnemy.cpp" />
     <ClCompile Include="TougherEnemyAmmo.cpp" />
     <ClCompile Include="TougherEnemyAmmoGen.cpp" />
@@ -180,7 +186,12 @@
     <Font Include="fonts\Lato-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Headers\EscapeBackground.h" />
+    <ClInclude Include="Headers\EventManager.h" />
+    <ClInclude Include="Scenes\EscapeScene.h" />
+    <ClInclude Include="Scenes\FinalScene.h" />
     <ClInclude Include="Headers\Animation.h" />
+    <ClInclude Include="Headers\Button.h" />
     <ClInclude Include="Headers\MitovsAmmo.h" />
     <ClInclude Include="Headers\Ammo.h" />
     <ClInclude Include="Headers\Background.h" />
@@ -205,6 +216,7 @@
     <ClInclude Include="Headers\TougherEnemyGen.h" />
     <ClInclude Include="Headers\Turret.h" />
     <ClInclude Include="Scenes\LevelOne.h" />
+    <ClInclude Include="Scenes\StartGameScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

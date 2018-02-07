@@ -1,38 +1,7 @@
-﻿  Ammo.cpp
-  EnemyAmmoGen.cpp
-  GameEngine.cpp
-  GameObject.cpp
-  Background.cpp
-  BasicEnemy.cpp
-  Generator.cpp
-Generator.cpp(24): warning C4018: '<=': signed/unsigned mismatch
-  BasicEnemyGen.cpp
-  EnemyAmmo.cpp
-  Explosion.cpp
-  Animation.cpp
-Animation.cpp(26): warning C4018: '>': signed/unsigned mismatch
-  Scene.cpp
-  MitovsAmmo.cpp
-  MitovsAmmoGen.cpp
-  MitovsHead.cpp
-MitovsHead.cpp(31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-MitovsHead.cpp(49): warning C4018: '<=': signed/unsigned mismatch
-MitovsHead.cpp(95): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-  Months.cpp
-Months.cpp(21): warning C4018: '<=': signed/unsigned mismatch
-Months.cpp(19): warning C4101: 'current_time': unreferenced local variable
-  GameEndingScreen.cpp
-  MitovGenerator.cpp
-  LevelOne.cpp
-Scenes\LevelOne.cpp(83): warning C4805: '==': unsafe mix of type 'int' and type 'bool' in operation
-  TougherEnemy.cpp
-  Compiling...
-  TougherEnemyAmmo.cpp
-  TougherEnemyAmmoGen.cpp
-  TougherEnemyGen.cpp
-  Turret.cpp
-  TextClass.cpp
+﻿  EscapeScene.cpp
   Generating code
-  All 413 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  3 of 443 functions ( 0.7%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Tues Graduation Game.vcxproj -> E:\Дипломна работа\tues_graduation_game\Tues Graduation Game\x64\Release\Tues Graduation Game.exe

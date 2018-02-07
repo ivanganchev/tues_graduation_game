@@ -42,6 +42,7 @@ LevelOne::LevelOne(SDL_Surface *screenSurface, SDL_Window *window, Scene *succes
 
 	this->mitovsHead = new MitovsHead(this->screenSurface, this->window, gameObjects);
 	this->months = new Months(this->screenSurface, this->window);
+	this->months->set_x(560);
 
 	Turret * spaceship = new Turret(this->screenSurface, this->window, gameObjects);
 	spaceship->set_x(540);
@@ -100,3 +101,7 @@ Scene * LevelOne::getNextScene() {
 	}
 	return nullptr;
 }
+
+const char *LevelOne::getSceneName() {
+	return "LevelOne";
+}   

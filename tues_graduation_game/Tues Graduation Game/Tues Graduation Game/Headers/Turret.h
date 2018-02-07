@@ -75,12 +75,13 @@ class Turret : public GameObject {
 	/** The fire sound . */
 	Mix_Chunk *fireSound;
 
-	
+	int rightMove;
+	int leftMove;
+	int spaceClicked;
 
 protected:
-	/** The key event. */
-	SDL_Event keyEvent;
 	
+
 
 public:
 

@@ -35,6 +35,7 @@ public:
 	virtual Scene *getNextScene();
 protected:
 	virtual void executeExtension(int i);
+	virtual const char* getSceneName();
 
 };
 

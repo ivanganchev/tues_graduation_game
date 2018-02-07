@@ -6,6 +6,7 @@
 #include <vector>
 #include "Headers/Turret.h"
 #include "Headers/GameEndingScreen.h"
+#include "Headers/EventManager.h"
 
 void Turret::moveLeft() {
 	if (this->x < 11) {
@@ -49,38 +50,80 @@ int Turret::health = 5;
 
 
 void Turret::move() {
-
 	const Uint8 *state = SDL_GetKeyboardState(NULL);
-	unsigned cap = 6;
-	if (SDL_PollEvent(&keyEvent)) {
+	SDL_Event keyEventDown = EventManager::keyDown;
+	SDL_Event keyEventUp = EventManager::keyUp;
 
-		if (keyEvent.type == SDL_KEYDOWN) {
-			if (state[SDL_SCANCODE_SPACE] && this->clipSize > 0) {
-				Mix_PlayChannel(0, fireSound, 1);
-				fire();
-			}
 
-			if (this->clipSize <= 0 && (SDL_GetTicks() - this->timer) >= 2000) {
-				this->clipSize = 15;
-			}
-
-			if (state[SDL_SCANCODE_A]) {
-				this->direction = -1;
-			}
-
-			if (state[SDL_SCANCODE_D]) {
-				this->direction = 1;
-			}
+	if (spaceClicked == 1) {
+		Mix_PlayChannel(0, fireSound, 1);
+		fire();
+	} 
+	if (leftMove == 1) {
+		if (this->x < 11) {
+			this->x -= this->x;
+		}
+		else {
+			this->x -= 11;
+		}
+	}
+	if (rightMove == 1) {
+		if (this->x >= 1350 - 105) {
+			this->x += (1350) - 105 - (this->x);
+		}
+		else {
+			this->x += 11;
 		}
 	}
 
-	if (this->direction == -1) {
+
+	if (this->clipSize <= 0 && (SDL_GetTicks() - this->timer) >= 2000) {
+		this->clipSize = 15;
+	}
+
+		if (keyEventDown.type == SDL_KEYDOWN) {
+
+			if (keyEventDown.key.keysym.sym == SDLK_SPACE && this->clipSize > 0) {
+				spaceClicked = 1;
+			}
+
+			if (keyEventDown.key.keysym.sym == SDLK_a) {
+				leftMove = 1;
+				rightMove = 0;
+			}
+
+			if (keyEventDown.key.keysym.sym == SDLK_d) {
+				rightMove = 1;
+				leftMove = 0;
+			}
+
+			EventManager::keyDown = {};
+
+		} else if (keyEventUp.type == SDL_KEYUP) {
+			if (keyEventUp.key.keysym.sym == SDLK_SPACE) {
+				spaceClicked = 0;
+			}
+
+			if (keyEventUp.key.keysym.sym == SDLK_a) {
+				leftMove = 0;
+			}
+
+			if (keyEventUp.key.keysym.sym == SDLK_d) {
+				rightMove = 0;
+			}
+
+			EventManager::keyUp = {};
+
+	}
+	
+
+	/*if (this->direction == -1) {
 		moveLeft();
 	}
 
 	if (this->direction == 1) {
 		moveRight();
-	}
+	}*/
 
 
 	for (int i = 0; i < this->gameObjects->size(); i++) {

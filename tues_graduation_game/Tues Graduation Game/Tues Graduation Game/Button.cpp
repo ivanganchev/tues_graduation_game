@@ -5,40 +5,31 @@
 #include "Headers/Button.h"
 #include "Headers/Animation.h"
 #include "Headers/TextClass.h"
-
+#include "Headers/EventManager.h"
 Button::Button(SDL_Surface* screenSurface, SDL_Window* window) : GameObject("pictures/button.png", screenSurface, window) {
 	this->buttonText = new TextClass(screenSurface, window);
 	clicked = false;
 }
 
 void Button::show() {
-	SDL_Event event;
-	int mouseY;
-	int mouseX;
-
-
-
-	if(SDL_PollEvent(&event) != 0) {
-		if (event.button.button == SDL_BUTTON_LEFT) {
-			mouseX = event.button.x;
-			mouseY = event.button.y;
+	SDL_Event event = EventManager::button;
+	int mouseX = event.button.x;
+	int mouseY = event.button.y;
 			
-			if ((mouseX > this->x) && (mouseX < (this->x + this->image->w)) && (mouseY > this->y) && (mouseY < (this->y + this->image->h))) {
-					if (event.button.state == SDL_PRESSED) {
-						this->image_path = "pictures/clickedButton.png";
-						this->image = IMG_Load(this->image_path);
+	if ((mouseX > this->x) && (mouseX < (this->x + this->image->w)) && (mouseY > this->y) && (mouseY < (this->y + this->image->h))) {
+		if (event.button.state == SDL_PRESSED) {
+			this->image_path = "pictures/clickedButton.png";
+			this->image = IMG_Load(this->image_path);
 						
-					} else if (event.button.state == SDL_RELEASED) {
-						this->image_path = "pictures/button.png";
-						this->image = IMG_Load(this->image_path);
-						this->clicked = true;
-						
-					}
-			}
+		} else if (event.button.state == SDL_RELEASED) {
+			this->image_path = "pictures/button.png";
+			this->image = IMG_Load(this->image_path);
+			this->clicked = true;
 		}
 
+		EventManager::button = {};
 	}
-
+	
 
 	int w = 0;
 	int	h = 0;

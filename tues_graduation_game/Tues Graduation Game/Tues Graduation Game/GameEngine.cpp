@@ -24,6 +24,8 @@
 #include "Scenes/LevelOne.h"
 #include "Headers/Scene.h"
 #include "Scenes/StartGameScene.h"
+#include "Scenes/EscapeScene.h"
+#include "Headers/EventManager.h"
 //#include "Headers/BonusesGenerator.h"
 //#include "Headers/Bonus.h"
 #include <cstdio>
@@ -65,28 +67,45 @@ int main() {
 		new LevelOne(screenSurface, window, 
 			new FinalScene(screenSurface, window, "pictures/successBackground.png"), 
 			new FinalScene(screenSurface, window, "pictures/gameendingscreen.png")));
-
+	bool escapeClicked = false;
+	Scene *temporarySceneContainer = NULL;
+	Scene *previousSceneContainer = NULL;
 	//currentScene->playMusic();
  
 	bool quit = false;
 	while (quit == false) {
 		currentScene->execute();
 		quit = currentScene->quitGame();
-		SDL_Event event;
-		while(SDL_PollEvent(&event) != 0) {
-			if (event.type == SDL_QUIT) {
-				quit = true;
+
+		EventManager::eventListener();
+
+		if(EventManager::quit.type != 0) {
+			quit = true;
+		} else if (EventManager::escape.type != 0) {
+			if (escapeClicked == false) {
+				temporarySceneContainer = currentScene;
+				currentScene = new EscapeScene(screenSurface, window);
+				escapeClicked = true;
+			} else {
+				currentScene = temporarySceneContainer;
+				escapeClicked = false;
 			}
+			EventManager::escape = {};
 		}
 
 		Scene *nextScene = currentScene->getNextScene();
-		if (nextScene != NULL) {
+		if (nextScene == currentScene) {
+			currentScene = temporarySceneContainer;
+		} else if (nextScene != NULL) {
+			escapeClicked = false;
 			currentScene = nextScene;
-		}
+		} 
+
+		
 
 		SDL_UpdateWindowSurface(window);
 		SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
-		SDL_Delay(1000 / FRAMES_PER_SECOND);
+		SDL_Delay(1000/FRAMES_PER_SECOND);
 	}
 
 	return 0;

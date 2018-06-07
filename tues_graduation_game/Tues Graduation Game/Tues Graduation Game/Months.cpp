@@ -17,7 +17,7 @@ Months::Months(SDL_Surface *screenSurface, SDL_Window *window) : TextClass(scree
 void Months::show() {
 
 	unsigned int seconds, current_time;
-	int interval = 10000;
+	int interval = 1000;
 	if (this->lastTime + interval <= SDL_GetTicks()) {
 		month_select++;
 		if (month_select == 11 && accessed == 0) {
@@ -29,7 +29,7 @@ void Months::show() {
 
 	if (month_select < 11) {
 		TextClass::set_text(this->months[month_select]);
-		this->setFont("fonts/ka1.ttf", 24);
+		this->setFont("fonts/Fotokerstkaart.ttf", 35);
 		TextClass::show();
 	} else {
 		setVisibility(false);

@@ -143,9 +143,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Ammo.cpp" />
+    <ClCompile Include="Bonus.cpp" />
+    <ClCompile Include="BonusesGenerator.cpp" />
     <ClCompile Include="EnemyAmmoGen.cpp" />
     <ClCompile Include="EscapeBackground.cpp" />
     <ClCompile Include="EventManager.cpp" />
+    <ClCompile Include="GameLogo.cpp" />
     <ClCompile Include="Scenes\EscapeScene.cpp" />
     <ClCompile Include="GameEndingScreen.cpp" />
     <ClCompile Include="Scenes\FinalScene.cpp" />
@@ -186,8 +189,11 @@
     <Font Include="fonts\Lato-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Headers\Bonus.h" />
+    <ClInclude Include="Headers\BonusesGenerator.h" />
     <ClInclude Include="Headers\EscapeBackground.h" />
     <ClInclude Include="Headers\EventManager.h" />
+    <ClInclude Include="Headers\GameLogo.h" />
     <ClInclude Include="Scenes\EscapeScene.h" />
     <ClInclude Include="Scenes\FinalScene.h" />
     <ClInclude Include="Headers\Animation.h" />

@@ -20,8 +20,8 @@
 #include "../Headers/Animation.h"
 #include "../Scenes/LevelOne.h"
 #include "../Headers/Scene.h"
-//#include "../Headers/BonusesGenerator.h"
-//#include "../Headers/Bonus.h"
+#include "../Headers/BonusesGenerator.h"
+#include "../Headers/Bonus.h"
 
 LevelOne::LevelOne(SDL_Surface *screenSurface, SDL_Window *window, Scene *success, Scene* failure) : Scene(screenSurface, window) {
 
@@ -43,6 +43,7 @@ LevelOne::LevelOne(SDL_Surface *screenSurface, SDL_Window *window, Scene *succes
 	this->mitovsHead = new MitovsHead(this->screenSurface, this->window, gameObjects);
 	this->months = new Months(this->screenSurface, this->window);
 	this->months->set_x(560);
+	this->months->set_y(-10);
 
 	Turret * spaceship = new Turret(this->screenSurface, this->window, gameObjects);
 	spaceship->set_x(540);
@@ -51,7 +52,8 @@ LevelOne::LevelOne(SDL_Surface *screenSurface, SDL_Window *window, Scene *succes
 	this->enemySpaceshipGen = new BasicEnemyGen(this->screenSurface, this->window, gameObjects);
 	this->mitovGen = new MitovGenerator(this->screenSurface, this->window, gameObjects);
 	this->tougherSpaceshipGen = new TougherEnemyGen(this->screenSurface, this->window, gameObjects);
-	//BonusesGenerator bonusesGen(this->screenSurface, this->window, &gameObjects);
+
+//	BonusesGenerator * bonusesGen = new BonusesGenerator(this->screenSurface, this->window, &gameObjects);
 
 	gameObjects->push_back(background1);
 	gameObjects->push_back(background2);

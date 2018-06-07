@@ -6,7 +6,7 @@
 #include <time.h>
 #include "Headers/TougherEnemyAmmo.h"
 
-TougherEnemy::TougherEnemy(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObjects) : GameObject("pictures/valkuplane1.png", screenSurface, window) {
+TougherEnemy::TougherEnemy(SDL_Surface* screenSurface, SDL_Window* window, vector <GameObject*> *gameObjects) : GameObject("pictures/Chorbadjiev.png", screenSurface, window) {
 	gameObjects_ = gameObjects;
 	this->moveFlag = true;
 	limit = rand() % 100 + 1;

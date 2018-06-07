@@ -4,6 +4,7 @@
 #include <vector>
 #include"../Headers/Background.h"
 #include "../Headers/Button.h"
+#include "../Headers/GameLogo.h"
 
 StartGameScene::StartGameScene(SDL_Surface *screenSurface, SDL_Window *window, Scene *success) : Scene(screenSurface, window) {
 	int width;
@@ -31,11 +32,15 @@ StartGameScene::StartGameScene(SDL_Surface *screenSurface, SDL_Window *window, S
 	Background * background2 = new Background(this->screenSurface, this->window);
 	background2->set_y(-height);
 
+	this->gamelogo = new GameLogo(this->screenSurface, this->window);
+	this->gamelogo->set_x(690);
+	this->gamelogo->set_y(260);
 
 	gameObjects->push_back(background1);
 	gameObjects->push_back(background2);
 	gameObjects->push_back(startGameButton);
 	gameObjects->push_back(endGameButton);
+	gameObjects->push_back(gamelogo);
 	
 
 }

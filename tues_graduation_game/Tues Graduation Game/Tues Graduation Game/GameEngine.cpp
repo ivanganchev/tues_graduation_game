@@ -53,9 +53,7 @@ int main() {
 		cout << "Error: " << SDL_GetError() << endl;
 		return 1;
 	}
-	//window = SDL_SetVideoMode(640, 480, 32, SDL_SWSURFACE);
 
-	//TODO Да се проверява резултата от изпълнението на функцията.
 	SDL_Surface* screenSurface = SDL_GetWindowSurface(window);
 	if (screenSurface == NULL) {
 		// In the case that the window could not be made...
